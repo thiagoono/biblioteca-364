@@ -102,12 +102,5 @@ Quando um empréstimo for finalizado, o registro poderá ser removido ou atualiz
 * **HTML5**
 * **CSS3**
 * **JavaScript**
-* **Google Books API**
-* **Git**
-* **GitHub**
-
-### Tecnologias ainda não definidas
-
-* **Framework CSS:** a definir.
-* **Back-end:** a definir.
-* **Banco de dados:** a definir.
+* **Open Library API**
+* **Bootstrap 5.3**
