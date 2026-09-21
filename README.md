@@ -25,7 +25,7 @@ Para entender as regras de negócio, o escopo e a arquitetura técnica da aplica
 
 ## 🎨 Design
 
-- [🖼️Protótipo no Stitch](LINK DO STITCH) - Telas interativas da aplicação.
+- [🖼️Protótipo no Figma](https://www.figma.com/design/mSH0L7J7jyw2qZaGbI55pp/Untitled?node-id=0-1&t=B6fMbrRL8mOF7EgB-1) - Telas interativas da aplicação.
 - [🎨Design System](./docs/design-system.md) - Identidade Visual.
 
 ---
@@ -37,7 +37,7 @@ Para entender as regras de negócio, o escopo e a arquitetura técnica da aplica
 ## 💻 Tecnologias e Dependências
 
 - **Framework CSS - Bootstrap:** O Bootstrap foi escolhido por oferecer responsividade nativa, componentes prontos, suporte a interações com JavaScript, além de ser um framework estável, atualizado e com licença livre.
-- **Open-Meteo:**  API responsável por fornecer dados climáticos e previsões meteorológicas. Através dela, é possível consultar informações de uma determinada localização geográfica, como temperatura atual, temperaturas máximas e mínimas, probabilidade de precipitação e previsão do tempo para os dias seguintes.
+- **Open Library API**: A Open Library API será responsável por fornecer aos usuários informações sobre os livros, como o título, descrição, sinopse, imagem da capa, editora, ano de publicação etc.
 
 ## ✅ Checklist | Indicadores de Desempenho (ID) dos Resultados de Aprendizagem (RA)
 
