@@ -2,7 +2,7 @@
 
 Este documento descreve o modelo de dados da aplicação **Biblioteca 364**, responsável pelo gerenciamento de usuários, livros e empréstimos.
 
-As informações bibliográficas dos livros, como título, autor, capa, gênero e descrição, serão obtidas através da **Google Books API**. Dessa forma, o banco de dados da aplicação armazenará apenas as informações necessárias para relacionar os livros aos seus proprietários e controlar os empréstimos.
+As informações bibliográficas dos livros, como título, autor, capa, gênero e descrição, serão obtidas através da **Open Library API**. Dessa forma, o banco de dados da aplicação armazenará apenas as informações necessárias para relacionar os livros aos seus proprietários e controlar os empréstimos.
 
 ---
 
@@ -57,10 +57,10 @@ Responsável por armazenar os dados necessários para a autenticação e identif
 
 Responsável por representar um exemplar pertencente a um usuário.
 
-As informações bibliográficas não serão armazenadas diretamente no banco de dados. O sistema utilizará o `volumeId` para consultar os dados do livro diretamente na **Google Books API**.
+As informações bibliográficas não serão armazenadas diretamente no banco de dados. O sistema utilizará o `volumeId` para consultar os dados do livro diretamente na **Open Library API**.
 
 * **id:** Identificador único do registro do livro no sistema.
-* **volumeId:** Identificador do volume fornecido pela Google Books API. É utilizado para recuperar as informações bibliográficas do livro.
+* **volumeId:** Identificador do volume fornecido pela Open Library API. É utilizado para recuperar as informações bibliográficas do livro.
 * **usuarioId:** Identificador do usuário proprietário do livro.
 
 #### Exemplo
