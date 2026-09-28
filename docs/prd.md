@@ -42,11 +42,11 @@ Abaixo estão as funcionalidades descritas sob a perspectiva dos usuários finai
 
 ### 📚 Épico 2: Biblioteca e Livros
 
-* **US03 - Cadastro de livro:** Como um usuário, quero pesquisar um livro através da Google Books API e adicioná-lo à minha biblioteca.
+* **US03 - Cadastro de livro:** Como um usuário, quero pesquisar um livro através da Open Library API e adicioná-lo à minha biblioteca.
 
-  * *Critérios de Aceitação:* O sistema deve permitir pesquisar livros através das informações disponíveis na Google Books API e selecionar um resultado para cadastrá-lo como pertencente ao usuário.
+  * *Critérios de Aceitação:* O sistema deve permitir pesquisar livros através das informações disponíveis na Open Library API e selecionar um resultado para cadastrá-lo como pertencente ao usuário.
 
-* **US04 - Identificação do livro:** Como um usuário, quero que o sistema associe o livro cadastrado ao seu identificador da Google Books API, para que suas informações bibliográficas possam ser recuperadas quando necessário.
+* **US04 - Identificação do livro:** Como um usuário, quero que o sistema associe o livro cadastrado ao seu identificador da Open Library API, para que suas informações bibliográficas possam ser recuperadas quando necessário.
 
 * **US05 - Listagem de livros:** Como um usuário, quero visualizar todos os livros cadastrados no grupo, para conhecer as obras disponíveis entre os integrantes.
 
