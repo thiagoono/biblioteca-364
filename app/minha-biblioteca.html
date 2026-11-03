@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Biblioteca - Biblioteca 364</title>
+
+  <!-- Google Fonts: Playfair Display, Inter & Material Symbols Outlined -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+
+  <!-- Compilação Local do Bootstrap 5.3 + Design Tokens com Sass (Sem CDN) -->
+  <link rel="stylesheet" href="../assets/resources/styles/main.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+  <!-- =========================================================================
+       HEADER MOBILE (Visível apenas em telas menores < 768px)
+       ID 04: Componente JavaScript Offcanvas do Bootstrap
+       ========================================================================= -->
+  <nav class="navbar d-md-none fixed-top bg-body border-bottom px-3" style="background-color: rgba(250, 249, 248, 0.95); backdrop-filter: blur(4px);">
+    <div class="container-fluid">
+      <a class="navbar-brand font-serif fw-bold text-primary" href="../index.html">Biblioteca 364</a>
+      <button class="btn btn-link text-primary text-decoration-none fw-bold text-uppercase d-flex align-items-center gap-1 p-0" data-bs-target="#sidebarMenu" data-bs-toggle="offcanvas" type="button" aria-controls="sidebarMenu" aria-label="Abrir menu de navegação">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- =========================================================================
+       SIDEBAR / OFFCANVAS DE NAVEGAÇÃO
+       Fixo no Desktop (>=768px) e Gaveta Offcanvas no Mobile (<768px)
+       ========================================================================= -->
+  <aside class="sidebar offcanvas-md offcanvas-start" id="sidebarMenu" tabindex="-1" aria-labelledby="sidebarMenuLabel">
+    
+    <!-- Cabeçalho visível no Mobile -->
+    <div class="offcanvas-header border-bottom p-4 d-md-none" style="border-color: rgba(255, 255, 255, 0.1) !important;">
+      <div class="d-flex flex-column">
+        <h1 class="h4 font-serif fw-bold mb-1 text-light" id="sidebarMenuLabel">Biblioteca 364</h1>
+        <p class="mb-0 small text-white-50">Arquivo Digital</p>
+      </div>
+      <button class="btn-close btn-close-white" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu" type="button" aria-label="Fechar"></button>
+    </div>
+
+    <!-- Cabeçalho visível no Desktop -->
+    <div class="p-4 d-none d-md-block border-bottom" style="border-color: rgba(255, 255, 255, 0.1) !important;">
+      <h1 class="h4 font-serif fw-bold mb-1 text-light">Biblioteca 364</h1>
+      <p class="mb-0 small text-white-50">Arquivo Digital</p>
+    </div>
+
+    <!-- Botão de Ação: Adicionar Livro -->
+    <div class="p-4">
+      <a href="adicionar-livro.html" class="btn w-100 fw-bold text-uppercase py-2 d-flex align-items-center justify-content-center gap-2 text-decoration-none" style="background-color: #8b0000; border-color: #8b0000; color: #ffffff; letter-spacing: 0.05em; font-size: 0.8125rem; border-radius: 0;">
+        <span class="material-symbols-outlined" style="font-size: 1.125rem;">add</span>
+        + Adicionar Livro
+      </a>
+    </div>
+
+    <!-- Lista de Links -->
+    <nav class="flex-grow-1 px-3" aria-label="Navegação da Barra Lateral">
+      <ul class="nav flex-column gap-1">
+        <li class="nav-item">
+          <a class="nav-link" href="../index.html" style="color: #f3f3f0;">
+            <span class="material-symbols-outlined" style="color: #f3f3f0;">home</span>
+            <span>Início</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../index.html" style="color: #f3f3f0;">
+            <span class="material-symbols-outlined" style="color: #f3f3f0;">menu_book</span>
+            <span>Biblioteca</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="minha-biblioteca.html" aria-current="page" style="background-color: rgba(255, 255, 255, 0.08); font-weight: 700; color: #f11546 !important;">
+            <span class="material-symbols-outlined" style="color: #f11546 !important;">library_books</span>
+            <span>Minha Biblioteca</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="emprestimos.html" style="color: #f3f3f0;">
+            <span class="material-symbols-outlined" style="color: #f3f3f0;">swap_horiz</span>
+            <span>Empréstimos</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="login.html" style="color: #f3f3f0;">
+            <span class="material-symbols-outlined" style="color: #f3f3f0;">person</span>
+            <span>Perfil</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- =========================================================================
+       ÁREA PRINCIPAL DE CONTEÚDO
+       ========================================================================= -->
+  <main class="main-content flex-grow-1">
+    <div class="container-fluid px-4 px-md-5 py-5 mx-auto" style="max-width: 80rem;">
+      
+      <!-- Cabeçalho da Seção e Campo de Pesquisa -->
+      <header class="d-flex flex-column flex-md-row justify-content-between align-items-md-center border-bottom pb-4 mb-5 gap-3 pt-md-0 pt-4">
+        <h2 class="display-6 font-serif fw-bold mb-0">Minha Biblioteca</h2>
+        <div class="position-relative w-100" style="max-width: 15.625rem;">
+          <span class="material-symbols-outlined search-icon">search</span>
+          <input class="form-control search-input" placeholder="Buscar no meu acervo..." type="search" aria-label="Buscar no meu acervo">
+        </div>
+      </header>
+
+      <!-- =====================================================================
+           ID 02: GRID RESPONSIVO DO BOOTSTRAP 5.3 (Cards de Meus Livros)
+           1 coluna no mobile (col-12), 2 no tablet (col-sm-6), 3 no desktop (col-lg-4)
+           ===================================================================== -->
+      <div class="row g-4">
+        
+        <!-- Livro 1: Dom Casmurro (Emprestado) -->
+        <div class="col-12 col-sm-6 col-lg-4">
+          <article class="card h-100 overflow-hidden rounded-0">
+            <!-- ID 09 e ID 10: Imagem com aspect-ratio, object-fit e WebP adaptativo -->
+            <div class="card-img-wrapper">
+              <picture>
+                <source srcset="../assets/resources/images/dom-casmurro-800w.webp 2x, ../assets/resources/images/dom-casmurro-400w.webp 1x" type="image/webp">
+                <img src="../assets/resources/images/dom-casmurro-400w.webp" alt="Capa de Dom Casmurro de Machado de Assis" class="card-img-top" loading="lazy">
+              </picture>
+              <div class="status-badge">
+                <span class="status-dot" style="background-color: #5f5e5e;"></span>
+                <span class="text-secondary text-decoration-line-through">Emprestado</span>
+              </div>
+            </div>
+            <div class="card-body d-flex flex-column justify-content-between p-4">
+              <div>
+                <h3 class="h5 font-serif fw-bold mb-1">Dom Casmurro</h3>
+                <p class="text-secondary mb-0">Machado de Assis</p>
+              </div>
+              <div class="mt-4 pt-3 border-top">
+                <p class="mb-0 d-flex align-items-center gap-2 small" style="color: #5a403c !important;">
+                  <span class="material-symbols-outlined fs-6">person</span>
+                  <span>Com: Roberto Carlos</span>
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Livro 2: A Metamorfose (Solicitado com Ação de Revisar Pedido) -->
+        <div class="col-12 col-sm-6 col-lg-4">
+          <article class="card h-100 overflow-hidden rounded-0">
+            <div class="card-img-wrapper">
+              <picture>
+                <source srcset="../assets/resources/images/a-metamorfose-800w.webp 2x, ../assets/resources/images/a-metamorfose-400w.webp 1x" type="image/webp">
+                <img src="../assets/resources/images/a-metamorfose-400w.webp" alt="Capa de A Metamorfose de Franz Kafka" class="card-img-top" loading="lazy">
+              </picture>
+              <div class="status-badge">
+                <span class="status-dot" style="background-color: #cca730;"></span>
+                <span class="fst-italic" style="color: #4f3e00;">Solicitado</span>
+              </div>
+            </div>
+            <div class="card-body d-flex flex-column justify-content-between p-4">
+              <div>
+                <h3 class="h5 font-serif fw-bold mb-1">A Metamorfose</h3>
+                <p class="text-secondary mb-0">Franz Kafka</p>
+              </div>
+              <div class="mt-4 pt-3 border-top d-flex justify-content-end">
+                <a href="emprestimos.html" class="btn btn-link p-0 text-primary fw-bold text-uppercase text-decoration-none small">
+                  Revisar Pedido
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Livro 3: O Alquimista (Disponível com Ação de Editar Detalhes) -->
+        <div class="col-12 col-sm-6 col-lg-4">
+          <article class="card h-100 overflow-hidden rounded-0">
+            <div class="card-img-wrapper">
+              <picture>
+                <source srcset="../assets/resources/images/o-alquimista-800w.webp 2x, ../assets/resources/images/o-alquimista-400w.webp 1x" type="image/webp">
+                <img src="../assets/resources/images/o-alquimista-400w.webp" alt="Capa de O Alquimista de Paulo Coelho" class="card-img-top" loading="lazy">
+              </picture>
+              <div class="status-badge">
+                <span class="status-dot" style="background-color: #5a403c;"></span>
+                <span style="color: #5a403c;">Disponível</span>
+              </div>
+            </div>
+            <div class="card-body d-flex flex-column justify-content-between p-4">
+              <div>
+                <h3 class="h5 font-serif fw-bold mb-1">O Alquimista</h3>
+                <p class="text-secondary mb-0">Paulo Coelho</p>
+              </div>
+              <div class="mt-4 pt-3 border-top d-flex justify-content-end">
+                <button type="button" class="btn btn-link p-0 text-primary fw-bold text-uppercase text-decoration-none small">
+                  Editar Detalhes
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         RODAPÉ ALINHADO AO FINAL
+         ======================================================================= -->
+    <footer class="w-100 px-4 px-md-5 py-5 border-top mt-auto bg-surface">
+      <div class="container-fluid mx-auto px-0 d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3" style="max-width: 80rem;">
+        <div class="h5 font-serif text-primary mb-0 fw-bold">Biblioteca 364</div>
+        <p class="text-secondary mb-0 small">
+          &copy; 2024 Biblioteca 364. Um arquivo comunitário digital.
+        </p>
+        <div class="d-flex gap-3 small">
+          <a class="text-secondary text-decoration-underline" href="#">Termos</a>
+          <a class="text-secondary text-decoration-underline" href="#">Privacidade</a>
+          <a class="text-secondary text-decoration-underline" href="#">Contato</a>
+          <a class="text-secondary text-decoration-underline" href="#">Sobre o Projeto</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Bootstrap 5.3 JS Bundle Carregado Localmente (Sem CDN) -->
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Script de Inicialização da Aplicação -->
+  <script src="../assets/resources/scripts/index.js"></script>
+</body>
+</html>
