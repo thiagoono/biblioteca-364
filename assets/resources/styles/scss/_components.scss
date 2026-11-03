@@ -1,0 +1,625 @@
+// =============================================================================
+// BIBLIOTECA 364 — COMPONENTES VISUAIS CUSTOMIZADOS
+// ID 03: Layout responsivo com CSS puro (Grid / Flexbox próprio)
+// ID 04: Estilização dos Componentes
+// ID 05: Unidades relativas
+// ID 08: Tipografia fluida
+// ID 09: Imagens responsivas
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// Tipografia Global e Elementos Base
+// -----------------------------------------------------------------------------
+body {
+  font-family: $font-family-sans;
+  background-color: $color-background;
+  color: $color-on-background;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.font-serif {
+  font-family: $font-family-serif;
+}
+
+.font-sans {
+  font-family: $font-family-sans;
+}
+
+.text-editorial-primary {
+  color: $color-primary !important;
+}
+
+.text-editorial-secondary {
+  color: $color-secondary !important;
+}
+
+.text-editorial-tertiary {
+  color: $color-tertiary !important;
+}
+
+.display-title-fluid {
+  @include fluid-type("display-lg");
+}
+
+.headline-fluid {
+  @include fluid-type("headline-lg");
+}
+
+.subheadline-fluid {
+  @include fluid-type("headline-md");
+}
+
+.label-editorial-caps {
+  @include fluid-type("label-caps");
+}
+
+// -----------------------------------------------------------------------------
+// Top Navigation Bar
+// -----------------------------------------------------------------------------
+.navbar-editorial {
+  background-color: rgba(250, 249, 248, 0.96);
+  backdrop-filter: blur(8px);
+  @include hairline(bottom);
+  padding-top: spacing(1.5);
+  padding-bottom: spacing(1.5);
+
+  .navbar-brand {
+    font-family: $font-family-serif;
+    font-size: px-to-rem(22);
+    font-weight: 700;
+    color: $color-primary;
+    letter-spacing: -0.01em;
+
+    &:hover {
+      color: $color-primary-container;
+    }
+  }
+
+  .nav-link {
+    font-family: $font-family-sans;
+    font-size: px-to-rem(13);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: $color-secondary;
+    padding: spacing(0.75) spacing(1);
+    position: relative;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $color-primary;
+    }
+
+    &.active {
+      color: $color-primary;
+      font-weight: 700;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -0.25rem;
+        left: spacing(1);
+        right: spacing(1);
+        height: 2px;
+        background-color: $color-primary;
+      }
+    }
+  }
+}
+
+// Offcanvas Mobile Menu personalizado
+.offcanvas-editorial {
+  background-color: $color-background;
+  border-left: 1px solid $color-outline;
+
+  .offcanvas-header {
+    @include hairline(bottom);
+    padding: spacing(2);
+  }
+
+  .nav-link {
+    font-size: px-to-rem(16);
+    padding: spacing(1.5) spacing(1);
+    @include hairline(bottom);
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Botões Editoriais (Arestas Vivas / Sharp)
+// -----------------------------------------------------------------------------
+.btn-editorial-primary {
+  background-color: $color-primary;
+  border: 1px solid $color-primary;
+  color: #ffffff;
+  border-radius: 0;
+  font-family: $font-family-sans;
+  font-size: px-to-rem(13);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: spacing(1.25) spacing(2.25);
+  transition: all 0.2s ease;
+
+  &:hover, &:focus {
+    background-color: $color-primary-container;
+    border-color: $color-primary-container;
+    color: #ffffff;
+    box-shadow: $shadow-interactive;
+  }
+}
+
+.btn-editorial-secondary {
+  background-color: transparent;
+  border: 1px solid $color-on-background;
+  color: $color-on-background;
+  border-radius: 0;
+  font-family: $font-family-sans;
+  font-size: px-to-rem(13);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: spacing(1.25) spacing(2.25);
+  transition: all 0.2s ease;
+
+  &:hover, &:focus {
+    background-color: $color-on-background;
+    color: #ffffff;
+  }
+}
+
+.btn-editorial-gold {
+  background-color: $color-tertiary-container;
+  border: 1px solid $color-tertiary-container;
+  color: #ffffff;
+  border-radius: 0;
+  font-family: $font-family-sans;
+  font-size: px-to-rem(13);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: spacing(1.25) spacing(2.25);
+  transition: all 0.2s ease;
+
+  &:hover, &:focus {
+    background-color: $color-tertiary;
+    border-color: $color-tertiary;
+    color: #ffffff;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Book Cards & Acervo
+// ID 09: object-fit: cover e proporções corretas
+// -----------------------------------------------------------------------------
+.book-card {
+  @include editorial-card-style;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+
+  .book-cover-container {
+    position: relative;
+    overflow: hidden;
+    background-color: $color-surface-container;
+    border-bottom: 1px solid $color-outline;
+
+    .book-cover-img {
+      @include book-cover-image("2/3");
+      transition: transform 0.3s ease;
+    }
+
+    .book-status-tag {
+      position: absolute;
+      top: spacing(1);
+      right: spacing(1);
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 0.25rem 0.5rem;
+      border: 1px solid rgba(26, 28, 28, 0.15);
+      border-radius: 2px;
+      backdrop-filter: blur(4px);
+    }
+  }
+
+  &:hover .book-cover-img {
+    transform: scale(1.03);
+  }
+
+  .book-card-body {
+    padding: spacing(1.5);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    .book-card-title {
+      font-family: $font-family-serif;
+      font-size: px-to-rem(18);
+      font-weight: 700;
+      color: $color-on-background;
+      margin-bottom: spacing(0.5);
+      line-height: 1.3;
+    }
+
+    .book-card-author {
+      font-family: $font-family-sans;
+      font-size: px-to-rem(13);
+      color: $color-secondary;
+      margin-bottom: spacing(1);
+    }
+
+    .book-card-meta {
+      margin-top: auto;
+      padding-top: spacing(1);
+      @include hairline(top);
+      font-size: px-to-rem(12);
+      color: $color-secondary;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Status Indicators
+// -----------------------------------------------------------------------------
+.status-indicator-available {
+  @include status-indicator($status-available);
+  color: $status-available;
+}
+
+.status-indicator-requested {
+  @include status-indicator($status-requested);
+  color: $status-requested;
+  font-style: italic;
+}
+
+.status-indicator-borrowed {
+  @include status-indicator($status-borrowed);
+  color: $status-borrowed;
+}
+
+// -----------------------------------------------------------------------------
+// ID 03: ESTRUTURA RESPONSIVA EM CSS PURO (Sem classes Grid do Bootstrap)
+// Utilizada na seção de Pilares do Manifesto Literário e Painel de Métricas
+// -----------------------------------------------------------------------------
+.editorial-manifesto-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: spacing(2);
+  margin-top: spacing(3);
+  margin-bottom: spacing(3);
+
+  @media (min-width: 576px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 992px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: spacing(3);
+  }
+
+  .manifesto-pillar-card {
+    background-color: $color-surface;
+    border: 1px solid $color-outline;
+    padding: spacing(3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: $color-outline;
+      transition: background-color 0.2s ease;
+    }
+
+    &:hover::before {
+      background-color: $color-primary;
+    }
+
+    .pillar-step-number {
+      font-family: $font-family-serif;
+      font-size: px-to-rem(36);
+      font-weight: 700;
+      color: rgba(97, 0, 0, 0.25);
+      line-height: 1;
+      margin-bottom: spacing(1.5);
+    }
+
+    .pillar-heading {
+      font-family: $font-family-serif;
+      font-size: px-to-rem(22);
+      font-weight: 700;
+      color: $color-on-background;
+      margin-bottom: spacing(1);
+    }
+
+    .pillar-text {
+      font-family: $font-family-sans;
+      font-size: px-to-rem(15);
+      color: $color-secondary;
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Formulários Editoriais Estilo Manuscrito
+// -----------------------------------------------------------------------------
+.editorial-form-card {
+  background-color: $color-surface;
+  @include hairline(all);
+  padding: spacing(3);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  position: relative;
+
+  .form-accent-bar {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4rem;
+    height: 0.25rem;
+    background-color: $color-primary;
+  }
+}
+
+.form-control-editorial {
+  border: none;
+  border-bottom: 2px solid rgba(26, 28, 28, 0.2);
+  border-radius: 0;
+  padding: spacing(1) 0;
+  background-color: transparent;
+  color: $color-on-background;
+  font-family: $font-family-sans;
+  font-style: italic;
+  transition: border-color 0.2s ease;
+
+  &:focus {
+    box-shadow: none;
+    border-color: $color-primary;
+    background-color: transparent;
+  }
+
+  &::placeholder {
+    color: $color-secondary;
+    font-style: italic;
+  }
+}
+
+.input-icon-adornment {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(26, 28, 28, 0.2);
+  border-radius: 0;
+  color: rgba(26, 28, 28, 0.4);
+}
+
+.input-group:focus-within .form-control-editorial,
+.input-group:focus-within .input-icon-adornment {
+  border-color: $color-primary;
+  color: $color-primary;
+}
+
+// -----------------------------------------------------------------------------
+// Detalhes do Livro (Ficha Técnica & Hero)
+// -----------------------------------------------------------------------------
+.book-detail-hero {
+  @include hairline(bottom);
+  padding-top: spacing(4);
+  padding-bottom: spacing(4);
+  background-color: $color-background;
+
+  .detail-cover-wrapper {
+    max-width: 22rem;
+    margin: 0 auto;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(26, 28, 28, 0.15);
+
+    img {
+      @include book-cover-image("2/3");
+    }
+  }
+
+  .detail-metadata-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    tr {
+      @include hairline(bottom);
+    }
+
+    th {
+      font-family: $font-family-sans;
+      font-size: px-to-rem(12);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: $color-secondary;
+      padding: spacing(1) 0;
+      width: 35%;
+      font-weight: 600;
+    }
+
+    td {
+      font-family: $font-family-sans;
+      font-size: px-to-rem(14);
+      color: $color-on-background;
+      padding: spacing(1) 0;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Rodapé Alinhado (mt-auto)
+// -----------------------------------------------------------------------------
+.footer-editorial {
+  @include hairline(top);
+  background-color: $color-background;
+  padding-top: spacing(3);
+  padding-bottom: spacing(3);
+  margin-top: auto;
+
+  .footer-brand {
+    font-family: $font-family-serif;
+    font-weight: 700;
+    color: $color-primary;
+  }
+
+  .footer-link {
+    font-family: $font-family-sans;
+    font-size: px-to-rem(13);
+    color: $color-secondary;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Estilos Específicos das Telas Bootstrap da Biblioteca 364
+// -----------------------------------------------------------------------------
+.playfair {
+  font-family: $font-family-serif;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.tracking-wider {
+  letter-spacing: 0.05em;
+}
+
+.sidebar {
+  width: 260px;
+  background-color: #2f3131 !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  color: #f3f3f0;
+  z-index: 1045;
+
+  .nav-link-custom {
+    color: #f3f3f0;
+    font-weight: 500;
+    font-size: px-to-rem(14);
+    padding: spacing(1.25) spacing(2);
+    display: flex;
+    align-items: center;
+    gap: spacing(1.5);
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    .material-symbols-outlined {
+      color: #f3f3f0;
+      font-size: 20px;
+    }
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.06);
+      color: #ffffff;
+    }
+
+    &.active {
+      color: #f11546 !important;
+      background-color: rgba(255, 255, 255, 0.08);
+      font-weight: 700;
+
+      .material-symbols-outlined {
+        color: #f11546 !important;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .sidebar.offcanvas-lg {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 100vh;
+    transform: none !important;
+    visibility: visible !important;
+  }
+
+  .main-content {
+    margin-left: 260px;
+  }
+}
+
+.main-content {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-input {
+  border: none;
+  border-bottom: 2px solid $color-on-background;
+  border-radius: 0;
+  background: transparent;
+  font-style: italic;
+  padding-left: 2.25rem;
+  color: $color-on-background;
+
+  &:focus {
+    box-shadow: none;
+    border-bottom-color: $color-primary;
+    background: transparent;
+  }
+}
+
+.filter-btn {
+  border: 1px solid rgba(26, 28, 28, 0.2);
+  border-radius: 50rem;
+  padding: 0.25rem 1rem;
+  font-size: px-to-rem(12);
+  font-weight: 500;
+  color: $color-on-background;
+  background: transparent;
+  transition: all 0.2s ease;
+
+  &:hover, &.active {
+    background-color: $color-surface-container;
+    border-color: $color-primary;
+    color: $color-primary;
+  }
+}
+
+.badge-custom {
+  background-color: rgba(250, 249, 248, 0.92);
+  backdrop-filter: blur(4px);
+  border: 1px solid $color-outline;
+  color: $color-on-background;
+  font-size: px-to-rem(12);
+  font-weight: 600;
+}
+
+.book-image-container {
+  aspect-ratio: 2/3;
+  background-color: $color-surface-container;
+  position: relative;
+  overflow: hidden;
+
+  .book-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+}
+
+.book-card:hover .book-image {
+  transform: scale(1.05);
+}

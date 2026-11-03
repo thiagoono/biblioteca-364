@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca 364 - Biblioteca Coletiva</title>
+
+  <!-- Google Fonts: Playfair Display, Inter & Material Symbols Outlined -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+
+  <!-- Compilação Local do Bootstrap 5.3 + Design Tokens com Sass (Sem CDN) -->
+  <link rel="stylesheet" href="assets/resources/styles/main.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       SIDEBAR / OFFCANVAS DE NAVEGAÇÃO
+       ID 04: Componente JavaScript Offcanvas Responsivo do Bootstrap 5.3
+       Fixo no Desktop (>=992px) e Gaveta Offcanvas no Mobile/Tablet (<992px)
+       ========================================================================= -->
+  <aside class="sidebar offcanvas-lg offcanvas-start" id="sidebarMenu" tabindex="-1" aria-labelledby="sidebarMenuLabel">
+    <!-- Cabeçalho visível no Mobile/Offcanvas -->
+    <div class="offcanvas-header border-bottom border-secondary border-opacity-25 p-4 d-lg-none">
+      <div>
+        <h1 class="h4 playfair fw-bold mb-1 text-light" id="sidebarMenuLabel">Biblioteca 364</h1>
+        <p class="mb-0 small text-white-50">Arquivo Digital Comunitário</p>
+      </div>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu" aria-label="Fechar"></button>
+    </div>
+
+    <!-- Cabeçalho visível no Desktop -->
+    <div class="p-4 border-bottom border-secondary border-opacity-25 d-none d-lg-block">
+      <h1 class="h4 playfair fw-bold mb-1 text-light">Biblioteca 364</h1>
+      <p class="mb-0 small text-white-50">Arquivo Digital</p>
+    </div>
+
+    <!-- Botão de Ação Rápida: Adicionar Livro -->
+    <div class="px-4 pt-3 pb-1">
+      <a href="app/adicionar-livro.html" class="btn btn-editorial-primary w-100 py-2 d-flex align-items-center justify-content-center gap-2 fw-semibold text-white tracking-wider">
+        <span class="material-symbols-outlined" style="font-size: 1.125rem;">add</span>
+        + ADICIONAR LIVRO
+      </a>
+    </div>
+
+    <!-- Links de Navegação Principal -->
+    <nav class="py-3 flex-grow-1" aria-label="Navegação Principal">
+      <ul class="nav flex-column gap-1 px-2">
+        <li class="nav-item">
+          <a class="nav-link-custom active" href="index.html" aria-current="page">
+            <span class="material-symbols-outlined">menu_book</span>
+            <span>Biblioteca</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link-custom" href="app/minha-biblioteca.html">
+            <span class="material-symbols-outlined">library_books</span>
+            <span>Minha Biblioteca</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link-custom" href="app/emprestimos.html">
+            <span class="material-symbols-outlined">swap_horiz</span>
+            <span>Empréstimos</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Rodapé da Barra Lateral: Autenticação -->
+    <div class="p-4 border-top border-secondary border-opacity-25 mt-auto">
+      <div class="d-flex flex-column gap-2">
+        <a href="app/login.html" class="btn btn-sm btn-outline-light rounded-0 py-2 d-flex align-items-center justify-content-center gap-2 text-uppercase tracking-wider" style="font-size: 0.8125rem;">
+          <span class="material-symbols-outlined" style="font-size: 1.125rem;">login</span>
+          Entrar
+        </a>
+        <a href="app/cadastro.html" class="btn btn-sm btn-editorial-gold rounded-0 py-2 text-center text-uppercase tracking-wider" style="font-size: 0.8125rem;">
+          Cadastre-se
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       ÁREA PRINCIPAL DE CONTEÚDO
+       ========================================================================= -->
+  <main class="main-content">
+
+    <!-- Top Bar (Navbar Mobile + Busca e Filtros) -->
+    <header class="sticky-top bg-surface py-3 px-4 px-md-5 border-bottom" style="backdrop-filter: blur(8px);">
+      <div class="container-fluid px-0">
+        <div class="row align-items-center gy-3">
+          
+          <!-- Botão de Toggle Mobile (Offcanvas) -->
+          <div class="col-12 d-flex align-items-center justify-content-between d-lg-none mb-2">
+            <button class="btn btn-outline-dark rounded-0 d-flex align-items-center gap-2 py-1 px-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu">
+              <span class="material-symbols-outlined">menu</span>
+              <span class="small fw-semibold text-uppercase">Menu</span>
+            </button>
+            <span class="playfair fw-bold text-editorial-primary fs-5 m-0">Biblioteca 364</span>
+            <a href="app/login.html" class="btn btn-sm btn-outline-dark rounded-0 py-1 px-2" title="Entrar">
+              <span class="material-symbols-outlined" style="font-size: 1.125rem;">account_circle</span>
+            </a>
+          </div>
+
+          <!-- Campo de Busca Estilizado Manuscrito -->
+          <div class="col-12 col-md-5 col-lg-5">
+            <div class="position-relative">
+              <span class="material-symbols-outlined position-absolute bottom-0 start-0 mb-2 text-secondary pointer-events-none" style="font-size: 1.25rem;">search</span>
+              <input class="form-control search-input" type="search" placeholder="Buscar no arquivo por título, autor..." aria-label="Buscar livros">
+            </div>
+          </div>
+
+          <!-- Filtros de Seleção -->
+          <div class="col-12 col-md-7 col-lg-7 d-flex align-items-center justify-content-md-end gap-2 overflow-auto pb-1 pb-md-0">
+            <span class="text-secondary small fw-semibold text-uppercase tracking-wider text-nowrap me-1">Filtros:</span>
+            <button class="filter-btn text-nowrap active" type="button">Todos</button>
+            <button class="filter-btn text-nowrap" type="button">Título</button>
+            <button class="filter-btn text-nowrap" type="button">Autor</button>
+            <button class="filter-btn text-nowrap" type="button">Gênero</button>
+            <button class="filter-btn text-nowrap" type="button">Disponíveis</button>
+          </div>
+
+        </div>
+      </div>
+    </header>
+
+    <!-- =======================================================================
+         ID 03: ESTRUTURA RESPONSIVA EM CSS PURO (CSS Grid próprio)
+         Seção informativa dos Pilares do Acervo Comunitário
+         ======================================================================= -->
+    <section class="px-4 px-md-5 pt-4 pb-2 border-bottom bg-white" aria-labelledby="manifesto-heading">
+      <div class="container-fluid px-0">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-2 mb-3">
+          <div>
+            <span class="label-editorial-caps text-editorial-primary d-block mb-1">Acervo Coletivo Entre Amigos</span>
+            <h2 id="manifesto-heading" class="headline-fluid m-0 text-dark">Coleção Compartilhada</h2>
+          </div>
+          <p class="text-secondary small mb-0 max-w-md">
+            Consulte os exemplares físicos cadastrados pelos integrantes e solicite empréstimos diretamente pelo sistema.
+          </p>
+        </div>
+
+        <!-- Container estruturado com CSS Grid Puro (definido em _components.scss) -->
+        <div class="editorial-manifesto-grid">
+          <div class="manifesto-pillar-card">
+            <span class="pillar-step-number">01</span>
+            <div>
+              <h3 class="pillar-heading">Catálogo Coletivo</h3>
+              <p class="pillar-text">Explore os livros disponíveis nas estantes dos amigos do grupo com dados bibliográficos organizados.</p>
+            </div>
+          </div>
+
+          <div class="manifesto-pillar-card">
+            <span class="pillar-step-number">02</span>
+            <div>
+              <h3 class="pillar-heading">Solicitar Empréstimo</h3>
+              <p class="pillar-text">Identifique o proprietário da obra física e encaminhe um pedido de leitura diretamente pela aplicação.</p>
+            </div>
+          </div>
+
+          <div class="manifesto-pillar-card">
+            <span class="pillar-step-number">03</span>
+            <div>
+              <h3 class="pillar-heading">Circulação Ativa</h3>
+              <p class="pillar-text">Acompanhe quais volumes estão disponíveis, com solicitações pendentes ou em leitura pelo grupo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         ID 02: GRID RESPONSIVO DO BOOTSTRAP 5.3
+         Acervo de Livros da Biblioteca Coletiva
+         ======================================================================= -->
+    <section class="flex-grow-1 p-4 p-md-5" aria-label="Catálogo de Livros">
+      <div class="container-fluid px-0">
+        
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <p class="text-secondary small m-0">Exibindo <strong>8</strong> volumes no arquivo comunitário</p>
+          <div class="dropdown">
+            <button class="btn btn-sm btn-outline-secondary rounded-0 dropdown-toggle text-uppercase tracking-wider" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 0.75rem;">
+              Ordenar: Mais Recentes
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end rounded-0 shadow-sm">
+              <li><a class="dropdown-item active" href="#">Mais Recentes</a></li>
+              <li><a class="dropdown-item" href="#">Título (A-Z)</a></li>
+              <li><a class="dropdown-item" href="#">Autor</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Grid Responsivo do Framework: 1 col (xs), 2 cols (sm), 3 cols (md/lg), 4 cols (xl) -->
+        <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4">
+
+          <!-- Livro 1: A Montanha Mágica (Disponível) -->
+          <div class="col">
+            <article class="book-card h-100 position-relative cursor-pointer">
+              <!-- ID 09 e ID 10: Imagem responsiva com <picture>, WebP e object-fit: cover -->
+              <div class="book-image-container">
+                <picture>
+                  <source srcset="assets/resources/images/a-montanha-magica-800w.webp 2x, assets/resources/images/a-montanha-magica-400w.webp 1x" type="image/webp">
+                  <img src="assets/resources/images/a-montanha-magica-400w.webp" alt="Capa do livro A Montanha Mágica de Thomas Mann" class="book-image" loading="lazy">
+                </picture>
+                <div class="position-absolute top-0 end-0 m-2 badge-custom px-2 py-1 d-flex align-items-center gap-1">
+                  <span class="rounded-circle" style="width: 8px; height: 8px; background-color: #2d6a4f;"></span>
+                  <span class="status-indicator-available">Disponível</span>
+                </div>
+              </div>
+              <div class="p-3 d-flex flex-column flex-grow-1">
+                <h3 class="h6 playfair fw-semibold mb-1 text-truncate">A Montanha Mágica</h3>
+                <p class="text-secondary small mb-3">Thomas Mann</p>
+                <p class="small text-secondary mb-0 pt-2 border-top mt-auto">Dono: Maria Silva</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- Livro 2: O Som e a Fúria (Solicitado) -->
+          <div class="col">
+            <article class="book-card h-100 position-relative cursor-pointer">
+              <div class="book-image-container">
+                <picture>
+                  <source srcset="assets/resources/images/o-som-e-a-furia-800w.webp 2x, assets/resources/images/o-som-e-a-furia-400w.webp 1x" type="image/webp">
+                  <img src="assets/resources/images/o-som-e-a-furia-400w.webp" alt="Capa do livro O Som e a Fúria de William Faulkner" class="book-image" loading="lazy">
+                </picture>
+                <div class="position-absolute top-0 end-0 m-2 badge-custom px-2 py-1">
+                  <span class="status-indicator-requested">Solicitado</span>
+                </div>
+              </div>
+              <div class="p-3 d-flex flex-column flex-grow-1">
+                <h3 class="h6 playfair fw-semibold mb-1 text-truncate">O Som e a Fúria</h3>
+                <p class="text-secondary small mb-3">William Faulkner</p>
+                <p class="small text-secondary mb-0 pt-2 border-top mt-auto">Dono: João Paulo</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- Livro 3: Ficções (Emprestado) -->
+          <div class="col">
+            <article class="book-card h-100 position-relative cursor-pointer" style="opacity: 0.82;">
+              <div class="book-image-container" style="filter: grayscale(80%);">
+                <picture>
+                  <source srcset="assets/resources/images/ficcoes-800w.webp 2x, assets/resources/images/ficcoes-400w.webp 1x" type="image/webp">
+                  <img src="assets/resources/images/ficcoes-400w.webp" alt="Capa do livro Ficções de Jorge Luis Borges" class="book-image" loading="lazy">
+                </picture>
+                <div class="position-absolute top-0 end-0 m-2 badge-custom px-2 py-1">
+                  <span class="status-indicator-borrowed text-decoration-line-through">Emprestado</span>
+                </div>
+              </div>
+              <div class="p-3 d-flex flex-column flex-grow-1">
+                <h3 class="h6 playfair fw-semibold mb-1 text-truncate">Ficções</h3>
+                <p class="text-secondary small mb-3">Jorge Luis Borges</p>
+                <p class="small text-secondary mb-0 pt-2 border-top mt-auto">Dono: Ana Costa</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- Livro 4: Em Busca do Tempo Perdido (Disponível) -->
+          <div class="col">
+            <article class="book-card h-100 position-relative cursor-pointer">
+              <div class="book-image-container">
+                <picture>
+                  <source srcset="assets/resources/images/em-busca-do-tempo-perdido-800w.webp 2x, assets/resources/images/em-busca-do-tempo-perdido-400w.webp 1x" type="image/webp">
+                  <img src="assets/resources/images/em-busca-do-tempo-perdido-400w.webp" alt="Capa do livro Em Busca do Tempo Perdido de Marcel Proust" class="book-image" loading="lazy">
+                </picture>
+                <div class="position-absolute top-0 end-0 m-2 badge-custom px-2 py-1 d-flex align-items-center gap-1">
+                  <span class="rounded-circle" style="width: 8px; height: 8px; background-color: #2d6a4f;"></span>
+                  <span class="status-indicator-available">Disponível</span>
+                </div>
+              </div>
+              <div class="p-3 d-flex flex-column flex-grow-1">
+                <h3 class="h6 playfair fw-semibold mb-1 text-truncate">Em Busca do Tempo Perdido</h3>
+                <p class="text-secondary small mb-3">Marcel Proust</p>
+                <p class="small text-secondary mb-0 pt-2 border-top mt-auto">Dono: Biblioteca 364</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- Livro 5: Dom Casmurro (Disponível) -->
+          <div class="col">
+            <article class="book-card h-100 position-relative cursor-pointer">
+              <div class="book-image-container">
+                <picture>
+                  <source srcset="assets/resources/images/dom-casmurro-800w.webp 2x, assets/resources/images/dom-casmurro-400w.webp 1x" type="image/webp">
+                  <img src="assets/resources/images/dom-casmurro-400w.webp" alt="Capa do livro Dom Casmurro de Machado de Assis" class="book-image" loading="lazy">
+                </picture>
+                <div class="position-absolute top-0 end-0 m-2 badge-custom px-2 py-1 d-flex align-items-center gap-1">
+                  <span class="rounded-circle" style="width: 8px; height: 8px; background-color: #2d6a4f;"></span>
+                  <span class="status-indicator-available">Disponível</span>
+                </div>
+              </div>
+              <div class="p-3 d-flex flex-column flex-grow-1">
+                <h3 class="h6 playfair fw-semibold mb-1 text-truncate">Dom Casmurro</h3>
+                <p class="text-secondary small mb-3">Machado de Assis</p>
+                <p class="small text-secondary mb-0 pt-2 border-top mt-auto">Dono: Thiago Ono</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- Livro 6: A Metamorfose (Disponível) -->
+          <div class="col">
+            <article class="book-card h-100 position-relative cursor-pointer">
+              <div class="book-image-container">
+                <picture>
+                  <source srcset="assets/resources/images/a-metamorfose-800w.webp 2x, assets/resources/images/a-metamorfose-400w.webp 1x" type="image/webp">
+                  <img src="assets/resources/images/a-metamorfose-400w.webp" alt="Capa do livro A Metamorfose de Franz Kafka" class="book-image" loading="lazy">
+                </picture>
+                <div class="position-absolute top-0 end-0 m-2 badge-custom px-2 py-1 d-flex align-items-center gap-1">
+                  <span class="rounded-circle" style="width: 8px; height: 8px; background-color: #2d6a4f;"></span>
+                  <span class="status-indicator-available">Disponível</span>
+                </div>
+              </div>
+              <div class="p-3 d-flex flex-column flex-grow-1">
+                <h3 class="h6 playfair fw-semibold mb-1 text-truncate">A Metamorfose</h3>
+                <p class="text-secondary small mb-3">Franz Kafka</p>
+                <p class="small text-secondary mb-0 pt-2 border-top mt-auto">Dono: Carlos Eduardo</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- Livro 7: O Alquimista (Emprestado) -->
+          <div class="col">
+            <article class="book-card h-100 position-relative cursor-pointer" style="opacity: 0.82;">
+              <div class="book-image-container" style="filter: grayscale(80%);">
+                <picture>
+                  <source srcset="assets/resources/images/o-alquimista-800w.webp 2x, assets/resources/images/o-alquimista-400w.webp 1x" type="image/webp">
+                  <img src="assets/resources/images/o-alquimista-400w.webp" alt="Capa do livro O Alquimista de Paulo Coelho" class="book-image" loading="lazy">
+                </picture>
+                <div class="position-absolute top-0 end-0 m-2 badge-custom px-2 py-1">
+                  <span class="status-indicator-borrowed text-decoration-line-through">Emprestado</span>
+                </div>
+              </div>
+              <div class="p-3 d-flex flex-column flex-grow-1">
+                <h3 class="h6 playfair fw-semibold mb-1 text-truncate">O Alquimista</h3>
+                <p class="text-secondary small mb-3">Paulo Coelho</p>
+                <p class="small text-secondary mb-0 pt-2 border-top mt-auto">Dono: Beatriz Lima</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- Livro 8: Memórias Póstumas de Brás Cubas (Disponível) -->
+          <div class="col">
+            <article class="book-card h-100 position-relative cursor-pointer">
+              <div class="book-image-container">
+                <picture>
+                  <source srcset="assets/resources/images/memorias-postumas-800w.webp 2x, assets/resources/images/memorias-postumas-400w.webp 1x" type="image/webp">
+                  <img src="assets/resources/images/memorias-postumas-400w.webp" alt="Capa do livro Memórias Póstumas de Brás Cubas de Machado de Assis" class="book-image" loading="lazy">
+                </picture>
+                <div class="position-absolute top-0 end-0 m-2 badge-custom px-2 py-1 d-flex align-items-center gap-1">
+                  <span class="rounded-circle" style="width: 8px; height: 8px; background-color: #2d6a4f;"></span>
+                  <span class="status-indicator-available">Disponível</span>
+                </div>
+              </div>
+              <div class="p-3 d-flex flex-column flex-grow-1">
+                <h3 class="h6 playfair fw-semibold mb-1 text-truncate">Memórias Póstumas</h3>
+                <p class="text-secondary small mb-3">Machado de Assis</p>
+                <p class="small text-secondary mb-0 pt-2 border-top mt-auto">Dono: Juliana Ramos</p>
+              </div>
+            </article>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         RODAPÉ ALINHADO AO FINAL DA PÁGINA (mt-auto)
+         ======================================================================= -->
+    <footer class="mt-auto py-5 px-4 px-md-5 border-top bg-surface">
+      <div class="container-fluid px-0">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-4">
+          <div class="h5 playfair text-editorial-primary mb-0 fw-bold">Biblioteca 364</div>
+          <p class="mb-0 text-secondary small text-center text-md-start">
+            &copy; 2024 Biblioteca 364. Um arquivo comunitário digital para compartilhamento de livros físicos entre amigos.
+          </p>
+          <div class="d-flex gap-3 small">
+            <a class="text-secondary text-decoration-none" href="#">Termos</a>
+            <a class="text-secondary text-decoration-none" href="#">Privacidade</a>
+            <a class="text-secondary text-decoration-none" href="#">Contato</a>
+            <a class="text-secondary text-decoration-none" href="#">Sobre o Projeto</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Bootstrap 5.3 JS Bundle Carregado Localmente (Sem CDN) -->
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Script de Inicialização da Aplicação -->
+  <script src="assets/resources/scripts/index.js"></script>
+</body>
+</html>

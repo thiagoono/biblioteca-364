@@ -1,0 +1,60 @@
+// =============================================================================
+// BIBLIOTECA 364 — DESIGN TOKENS & BOOTSTRAP OVERRIDES
+// ID 06: Design System Consistente
+// ID 07: Variáveis Sass
+// =============================================================================
+
+// Cores da Identidade "New Editorial"
+$color-primary: #610000;
+$color-primary-container: #8b0000;
+$color-primary-fixed: #ffdad4;
+$color-secondary: #5f5e5e;
+$color-secondary-container: #e2dfde;
+$color-tertiary: #735c00;
+$color-tertiary-container: #cca730;
+$color-background: #faf9f8;
+$color-surface: #ffffff;
+$color-surface-container: #eeeeed;
+$color-surface-container-low: #f4f3f2;
+$color-on-background: #1a1c1c;
+$color-on-surface-variant: #5a403c;
+$color-outline: rgba(26, 28, 28, 0.12);
+
+// Cores Semânticas de Disponibilidade de Livros
+$status-available: #2d6a4f;
+$status-requested: #610000;
+$status-borrowed: #8e706b;
+
+// Tipografia
+$font-family-serif: 'Playfair Display', Georgia, serif;
+$font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+// Espaçamentos Modulares (Base 8px / 0.5rem)
+$spacing-unit: 0.5rem;    // 8px
+$spacing-sm: 1rem;        // 16px
+$spacing-md: 2rem;        // 32px
+$spacing-lg: 4rem;        // 64px
+$container-max-width: 1280px;
+
+// Bordas e Sombras
+$border-hairline: 1px solid $color-outline;
+$shadow-interactive: 0 4px 20px rgba(0, 0, 0, 0.05);
+
+// -----------------------------------------------------------------------------
+// Sobrescrita de Variáveis Nativas do Bootstrap 5.3 (Definidas antes da importação)
+// -----------------------------------------------------------------------------
+$primary: $color-primary;
+$secondary: $color-secondary;
+$body-bg: $color-background;
+$body-color: $color-on-background;
+$font-family-sans-serif: $font-family-sans;
+$font-family-serif: $font-family-serif;
+$headings-font-family: $font-family-serif;
+$headings-font-weight: 700;
+$border-radius: 0;
+$border-radius-sm: 0;
+$border-radius-lg: 0;
+$border-color: $color-outline;
+$link-color: $color-primary;
+$link-hover-color: $color-primary-container;
+$link-decoration: none;

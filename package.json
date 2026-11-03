@@ -1,0 +1,29 @@
+{
+  "name": "biblioteca-364",
+  "version": "1.0.0",
+  "description": "Sistema web desenvolvido para facilitar o gerenciamento e o compartilhamento de livros entre grupos de amigos.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "sass:build": "sass assets/resources/styles/scss/main.scss assets/resources/styles/main.css --no-source-map --style=expanded --quiet-deps",
+    "sass:watch": "sass --watch assets/resources/styles/scss/main.scss:assets/resources/styles/main.css --quiet-deps"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thiagoono/biblioteca-364.git"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/thiagoono/biblioteca-364/issues"
+  },
+  "homepage": "https://github.com/thiagoono/biblioteca-364#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.8"
+  },
+  "devDependencies": {
+    "sass": "^1.107.1"
+  }
+}
