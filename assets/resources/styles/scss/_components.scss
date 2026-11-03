@@ -623,3 +623,88 @@ body {
 .book-card:hover .book-image {
   transform: scale(1.05);
 }
+
+// -----------------------------------------------------------------------------
+// Componentes Específicos do Protótipo de Login e Cadastro (Bootstrap)
+// -----------------------------------------------------------------------------
+.font-headline {
+  font-family: $font-family-serif;
+}
+
+.custom-card {
+  background-color: $color-surface;
+  border: 1px solid $color-outline;
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.card-top-accent {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4rem;
+  height: 0.25rem;
+  background-color: $color-primary;
+}
+
+.form-control-custom {
+  border: none;
+  border-bottom: 2px solid rgba(26, 28, 28, 0.2);
+  border-radius: 0;
+  padding: 0.75rem 0;
+  background-color: transparent;
+  font-style: italic;
+  color: $color-on-background;
+  transition: border-color 0.2s ease;
+
+  &:focus {
+    box-shadow: none;
+    border-color: $color-primary;
+    background-color: transparent;
+  }
+
+  &::placeholder {
+    color: $color-secondary;
+  }
+}
+
+.input-group-text-custom {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(26, 28, 28, 0.2);
+  border-radius: 0;
+  color: rgba(26, 28, 28, 0.4);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.form-group:focus-within .input-group-text-custom,
+.form-group:focus-within .material-symbols-outlined {
+  color: $color-primary;
+  border-color: $color-primary;
+}
+
+.form-group:focus-within .form-control-custom {
+  border-color: $color-primary;
+}
+
+.header-nav {
+  background-color: rgba(250, 249, 248, 0.95);
+  backdrop-filter: blur(4px);
+  border-bottom: 1px solid $color-outline;
+}
+
+.link-primary-custom {
+  color: $color-primary;
+  font-weight: 600;
+
+  &:hover {
+    color: $color-primary-container;
+  }
+}
+
+.footer {
+  border-top: 1px solid $color-outline;
+  background-color: $color-background;
+}

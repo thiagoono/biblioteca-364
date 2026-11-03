@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Biblioteca 364</title>
+
+  <!-- Google Fonts: Playfair Display, Inter & Material Symbols Outlined -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+
+  <!-- Compilação Local do Bootstrap 5.3 + Design Tokens com Sass (Sem CDN) -->
+  <link rel="stylesheet" href="../assets/resources/styles/main.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+  <!-- =========================================================================
+       CABEÇALHO SUPERIOR (TopNavBar)
+       ========================================================================= -->
+  <header class="header-nav fixed-top py-3 px-4">
+    <div class="container-xl d-flex justify-content-between align-items-center">
+      <a href="../index.html" class="text-decoration-none">
+        <h1 class="font-headline fs-4 fw-bold text-editorial-primary m-0">Biblioteca 364</h1>
+      </a>
+      <a href="../index.html" class="small text-secondary fw-semibold text-uppercase tracking-wider text-decoration-none d-flex align-items-center gap-1">
+        <span class="material-symbols-outlined" style="font-size: 1.125rem;">arrow_back</span>
+        <span>Voltar ao Acervo</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       CONTEÚDO PRINCIPAL (Card de Login Editorial Centralizado)
+       ========================================================================= -->
+  <main class="flex-grow-1 d-flex align-items-center justify-content-center px-3 pt-5 mt-5 pb-5">
+    <div class="custom-card p-4 p-sm-5 w-100" style="max-width: 28rem;">
+      
+      <!-- Linha sutil de acento carmesim no topo do card -->
+      <div class="card-top-accent"></div>
+
+      <div class="text-center mt-3">
+        <h2 class="font-headline fs-2 fw-bold mb-2">Acesso ao Arquivo</h2>
+        <p class="text-secondary small mb-0">Identifique-se para consultar o acervo digital.</p>
+      </div>
+
+      <!-- Formulário Visual de Acesso (Entrega 2: Sem autenticação real ou backend) -->
+      <form action="#" class="mt-4 pt-2" method="POST">
+        
+        <!-- Campo: E-mail -->
+        <div class="mb-4 form-group">
+          <label class="visually-hidden" for="email-address">E-mail</label>
+          <div class="input-group">
+            <input autocomplete="email" class="form-control form-control-custom" id="email-address" name="email" placeholder="Endereço de E-mail" required type="email">
+            <span class="input-group-text input-group-text-custom">
+              <span class="material-symbols-outlined" style="font-size: 1.25rem;">mail</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Campo: Senha com alternância de visibilidade -->
+        <div class="mb-4 form-group">
+          <label class="visually-hidden" for="password">Senha</label>
+          <div class="input-group">
+            <input autocomplete="current-password" class="form-control form-control-custom" id="password" name="password" placeholder="Senha" required type="password">
+            <button class="input-group-text input-group-text-custom toggle-password-btn" id="togglePassword" data-target-input="password" type="button" aria-label="Alternar visibilidade da senha" style="cursor: pointer;">
+              <span class="material-symbols-outlined" style="font-size: 1.25rem;">visibility_off</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Opções: Lembrar-me e Esqueci minha senha -->
+        <div class="d-flex align-items-center justify-content-between mb-4">
+          <div class="form-check m-0">
+            <input class="form-check-input rounded-0" id="remember-me" name="remember-me" style="border-color: rgba(26, 28, 28, 0.2);" type="checkbox" value="remember">
+            <label class="form-check-label small text-secondary fw-medium" for="remember-me">
+              Lembrar-me
+            </label>
+          </div>
+          <div>
+            <a class="small text-secondary fw-medium text-decoration-underline" href="#" style="text-underline-offset: 4px; text-decoration-color: rgba(26, 28, 28, 0.2);">
+              Esqueci minha senha
+            </a>
+          </div>
+        </div>
+
+        <!-- Botão Primário: Entrar -->
+        <div class="d-grid mt-2">
+          <button class="btn btn-editorial-primary w-100 py-3" type="submit">
+            Entrar
+          </button>
+        </div>
+
+      </form>
+
+      <!-- Rodapé do Card: Acesso ao Cadastro -->
+      <div class="mt-4 pt-4 border-top text-center">
+        <p class="small text-secondary m-0">
+          Não tem uma conta?
+          <a class="link-primary-custom text-decoration-underline ms-1" href="cadastro.html" style="text-underline-offset: 4px;">
+            Cadastre-se
+          </a>
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       RODAPÉ INSTITUCIONAL (Alinhado ao final com mt-auto)
+       ========================================================================= -->
+  <footer class="footer py-5 px-4 mt-auto">
+    <div class="container-xl d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+      <p class="m-0 text-secondary small text-center text-md-start">
+        &copy; 2024 Biblioteca 364. Um arquivo comunitário digital.
+      </p>
+      <div class="d-flex gap-4 small">
+        <a class="text-secondary text-decoration-none" href="#">Termos</a>
+        <a class="text-secondary text-decoration-none" href="#">Privacidade</a>
+        <a class="text-secondary text-decoration-none" href="#">Contato</a>
+        <a class="text-secondary text-decoration-none" href="#">Sobre o Projeto</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3 JS Bundle Carregado Localmente (Sem CDN) -->
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Script de Inicialização da Aplicação (Alternância de visibilidade da senha) -->
+  <script src="../assets/resources/scripts/index.js"></script>
+</body>
+</html>
