@@ -708,3 +708,127 @@ body {
   border-top: 1px solid $color-outline;
   background-color: $color-background;
 }
+
+// -----------------------------------------------------------------------------
+// Componentes do Cadastro (Bootstrap)
+// -----------------------------------------------------------------------------
+.brand-title {
+  font-family: $font-family-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: $color-primary;
+}
+
+.header-top {
+  background-color: $color-background;
+  border-bottom: 1px solid $color-outline;
+  padding: 24px 0;
+}
+
+.bg-pattern {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.05;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(45deg, $color-on-background 0, $color-on-background 1px, transparent 0, transparent 50%);
+  background-size: 10px 10px;
+}
+
+.card-auth {
+  background-color: $color-background;
+  border: 1px solid $color-outline;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  padding: 32px;
+  position: relative;
+  z-index: 10;
+  max-width: 450px;
+  margin: 0 auto;
+
+  @media (min-width: 768px) {
+    padding: 48px;
+  }
+
+  h1 {
+    font-family: $font-family-serif;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+}
+
+.text-secondary-custom {
+  color: $color-secondary;
+  font-size: 15px;
+}
+
+.input-group-custom {
+  border-bottom: 2px solid rgba(90, 64, 60, 0.3);
+  padding: 8px 0;
+  transition: border-color 0.3s;
+
+  &:focus-within {
+    border-color: $color-primary;
+
+    .material-symbols-outlined {
+      color: $color-primary;
+    }
+  }
+
+  .material-symbols-outlined {
+    color: $color-secondary;
+    transition: color 0.3s;
+    margin-right: 8px;
+  }
+}
+
+.btn-toggle-password {
+  background: none;
+  border: none;
+  color: $color-secondary;
+  padding: 0;
+  cursor: pointer;
+
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+.btn-primary-custom {
+  background-color: $color-primary;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  padding: 12px 24px;
+  text-transform: uppercase;
+  transition: background-color 0.3s;
+  border: none;
+  border-radius: 0;
+
+  &:hover {
+    background-color: $color-primary-container;
+    color: #fff;
+  }
+}
+
+.form-check-input-custom {
+  border-color: rgba(90, 64, 60, 0.5);
+  border-radius: 2px;
+  width: 16px;
+  height: 16px;
+  margin-top: 3px;
+
+  &:checked {
+    background-color: $color-primary;
+    border-color: $color-primary;
+  }
+}
+
+.footer-bottom {
+  background-color: $color-background;
+  border-top: 1px solid $color-outline;
+  padding: 24px 0;
+  color: $color-secondary;
+  font-size: 14px;
+}

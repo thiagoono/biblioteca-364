@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro - Biblioteca 364</title>
+
+  <!-- Google Fonts: Playfair Display, Inter & Material Symbols Outlined -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+
+  <!-- Compilação Local do Bootstrap 5.3 + Design Tokens com Sass (Sem CDN) -->
+  <link rel="stylesheet" href="../assets/resources/styles/main.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+  <!-- =========================================================================
+       CABEÇALHO SUPERIOR (Transactional Header)
+       ========================================================================= -->
+  <header class="header-top text-center w-100">
+    <div class="container-xl d-flex justify-content-between align-items-center px-4">
+      <a href="../index.html" class="text-decoration-none">
+        <span class="brand-title">Biblioteca 364</span>
+      </a>
+      <a href="../index.html" class="small text-secondary fw-semibold text-uppercase tracking-wider text-decoration-none d-flex align-items-center gap-1">
+        <span class="material-symbols-outlined" style="font-size: 1.125rem;">arrow_back</span>
+        <span>Voltar ao Acervo</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       CONTEÚDO PRINCIPAL (Main Content Canvas)
+       ========================================================================= -->
+  <main class="main-content d-flex align-items-center justify-content-center flex-grow-1 position-relative">
+    <!-- Padrão gráfico de fundo sutil editorial -->
+    <div class="bg-pattern"></div>
+
+    <div class="card-auth w-100">
+      <div class="text-center mb-4">
+        <h1>Junte-se ao Arquivo</h1>
+        <p class="text-secondary-custom">
+          Crie sua conta para participar do nosso arquivo comunitário digital. Acesso a clássicos, resenhas e empréstimos.
+        </p>
+      </div>
+
+      <!-- Formulário Visual de Cadastro (Entrega 2: Sem regras de negócio ou backend) -->
+      <form action="#" class="d-flex flex-column gap-3" method="POST">
+        
+        <!-- Campo: Nome Completo -->
+        <div>
+          <label class="visually-hidden" for="fullName">Nome Completo</label>
+          <div class="d-flex align-items-center input-group-custom">
+            <span class="material-symbols-outlined" style="font-size: 1.25rem;">person</span>
+            <input class="form-control form-control-custom w-100" id="fullName" name="fullName" placeholder="Seu nome completo" required type="text">
+          </div>
+        </div>
+
+        <!-- Campo: E-mail -->
+        <div>
+          <label class="visually-hidden" for="email">E-mail</label>
+          <div class="d-flex align-items-center input-group-custom">
+            <span class="material-symbols-outlined" style="font-size: 1.25rem;">mail</span>
+            <input class="form-control form-control-custom w-100" id="email" name="email" placeholder="Seu endereço de e-mail" required type="email">
+          </div>
+        </div>
+
+        <!-- Campo: Senha com alternância de visibilidade -->
+        <div>
+          <label class="visually-hidden" for="password">Senha</label>
+          <div class="d-flex align-items-center input-group-custom">
+            <span class="material-symbols-outlined" style="font-size: 1.25rem;">lock</span>
+            <input class="form-control form-control-custom w-100" id="password" name="password" placeholder="Crie uma senha forte" required type="password">
+            <button class="btn-toggle-password ms-2 toggle-password-btn" data-target-input="password" type="button" aria-label="Alternar visibilidade da senha">
+              <span class="material-symbols-outlined" style="font-size: 1.25rem;">visibility_off</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Campo: Confirmação de Senha com alternância de visibilidade -->
+        <div>
+          <label class="visually-hidden" for="confirmPassword">Confirmar Senha</label>
+          <div class="d-flex align-items-center input-group-custom">
+            <span class="material-symbols-outlined" style="font-size: 1.25rem;">lock_reset</span>
+            <input class="form-control form-control-custom w-100" id="confirmPassword" name="confirmPassword" placeholder="Confirme sua senha" required type="password">
+            <button class="btn-toggle-password ms-2 toggle-password-btn" data-target-input="confirmPassword" type="button" aria-label="Alternar visibilidade da confirmação de senha">
+              <span class="material-symbols-outlined" style="font-size: 1.25rem;">visibility_off</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Termos de Serviço -->
+        <div class="d-flex align-items-start gap-2 pt-2">
+          <input class="form-check-input form-check-input-custom" id="terms" required type="checkbox">
+          <label class="text-secondary-custom small mb-0" for="terms">
+            Concordo com os <a class="link-primary-custom" href="#">Termos de Serviço</a> e a <a class="link-primary-custom" href="#">Política de Privacidade</a>.
+          </label>
+        </div>
+
+        <!-- Botão Primário: Criar Conta -->
+        <div class="pt-4 pb-2">
+          <button class="btn btn-primary-custom w-100 d-flex justify-content-center align-items-center gap-2" type="submit">
+            <span>Criar Conta</span>
+            <span class="material-symbols-outlined" style="font-size: 1.125rem;">arrow_forward</span>
+          </button>
+        </div>
+
+      </form>
+
+      <!-- Rodapé do Card: Acesso ao Login -->
+      <div class="mt-4 text-center border-top pt-3">
+        <p class="text-secondary-custom mb-0">
+          Já possui uma conta? <a class="link-primary-custom fw-semibold" href="login.html">Entre aqui</a>.
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       RODAPÉ TRANSACIONAL
+       ========================================================================= -->
+  <footer class="footer-bottom w-100 text-center mt-auto">
+    &copy; 2024 Biblioteca 364. Um arquivo comunitário digital.
+  </footer>
+
+  <!-- Bootstrap 5.3 JS Bundle Carregado Localmente (Sem CDN) -->
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Script de Inicialização da Aplicação (Alternância de visibilidade da senha) -->
+  <script src="../assets/resources/scripts/index.js"></script>
+</body>
+</html>
