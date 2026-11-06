@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestão de Empréstimos - Biblioteca 364</title>
+
+    <!-- Google Fonts: Playfair Display, Inter & Material Symbols Outlined -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+      rel="stylesheet"
+    />
+
+    <!-- Compilação Local do Bootstrap 5.3 + Design Tokens com Sass (Sem CDN) -->
+    <link rel="stylesheet" href="../assets/resources/styles/main.css" />
+  </head>
+  <body>
+    <!-- =========================================================================
+       SIDEBAR / OFFCANVAS DE NAVEGAÇÃO
+       ID 04: Componente JavaScript Offcanvas Responsivo do Bootstrap 5.3
+       Fixo no Desktop (>=992px) e Gaveta Offcanvas no Mobile/Tablet (<992px)
+       ========================================================================= -->
+    <aside
+      class="sidebar offcanvas-lg offcanvas-start"
+      id="sidebarMenu"
+      tabindex="-1"
+      aria-labelledby="sidebarMenuLabel"
+    >
+      <!-- Cabeçalho visível no Mobile/Offcanvas -->
+      <div
+        class="offcanvas-header border-bottom border-secondary border-opacity-25 p-4 d-lg-none"
+      >
+        <div>
+          <h1 class="h4 playfair fw-bold mb-1 text-light" id="sidebarMenuLabel">
+            Biblioteca 364
+          </h1>
+          <p class="mb-0 small text-white-50">Arquivo Digital Comunitário</p>
+        </div>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="offcanvas"
+          data-bs-target="#sidebarMenu"
+          aria-label="Fechar"
+        ></button>
+      </div>
+
+      <!-- Cabeçalho visível no Desktop -->
+      <div
+        class="p-4 border-bottom border-secondary border-opacity-25 d-none d-lg-block"
+      >
+        <h1 class="h4 playfair fw-bold mb-1 text-light">Biblioteca 364</h1>
+        <p class="mb-0 small text-white-50">Arquivo Digital</p>
+      </div>
+
+      <!-- Botão de Ação Rápida: Adicionar Livro -->
+      <div class="px-4 pt-3 pb-1">
+        <a
+          href="adicionar-livro.html"
+          class="btn btn-editorial-primary w-100 py-2 d-flex align-items-center justify-content-center gap-2 fw-semibold text-white tracking-wider"
+        >
+          <span class="material-symbols-outlined" style="font-size: 1.125rem"
+            >add</span
+          >
+          + ADICIONAR LIVRO
+        </a>
+      </div>
+
+      <!-- Links de Navegação Principal -->
+      <nav class="py-3 flex-grow-1" aria-label="Navegação Principal">
+        <ul class="nav flex-column gap-1 px-2">
+          <li class="nav-item">
+            <a class="nav-link-custom" href="../index.html">
+              <span class="material-symbols-outlined">menu_book</span>
+              <span>Biblioteca</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link-custom" href="minha-biblioteca.html">
+              <span class="material-symbols-outlined">local_library</span>
+              <span>Minha Biblioteca</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link-custom active" href="gestao-de-emprestimos.html" aria-current="page">
+              <span class="material-symbols-outlined">swap_horiz</span>
+              <span>Empréstimos</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Rodapé da Barra Lateral com Perfil do Usuário -->
+      <div class="p-3 border-top border-secondary border-opacity-25 mt-auto">
+        <div class="d-flex align-items-center gap-3">
+          <img
+            src="../assets/resources/images/avatar-user.webp"
+            alt="Avatar do Usuário"
+            class="rounded-circle"
+            width="38"
+            height="38"
+            style="object-fit: cover"
+          />
+          <div class="flex-grow-1 overflow-hidden">
+            <div class="text-white small fw-semibold text-truncate">
+              Maria Silva
+            </div>
+            <div class="text-white-50 small text-truncate">Leitora Ativa</div>
+          </div>
+          <a
+            href="login.html"
+            class="text-white-50 text-decoration-none"
+            title="Sair / Trocar Conta"
+          >
+            <span class="material-symbols-outlined fs-5">logout</span>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- =========================================================================
+       CONTEÚDO PRINCIPAL (Main Content Canvas)
+       ========================================================================= -->
+    <main class="main-content">
+      <!-- Barra Superior / Header Mobile -->
+      <header
+        class="sticky-top bg-background border-bottom py-3 px-4 px-md-5 d-flex align-items-center justify-content-between z-3"
+      >
+        <div class="d-flex align-items-center gap-3">
+          <button
+            class="btn btn-outline-secondary d-lg-none p-2 rounded-0 border-0"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#sidebarMenu"
+            aria-controls="sidebarMenu"
+            aria-label="Abrir Menu de Navegação"
+          >
+            <span class="material-symbols-outlined">menu</span>
+          </button>
+          <div>
+            <h2 class="h5 playfair fw-bold mb-0 text-editorial-primary">
+              Gestão de Empréstimos
+            </h2>
+            <p class="text-secondary small mb-0 d-none d-sm-block">
+              Acompanhe as solicitações e o status dos livros em circulação.
+            </p>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-3">
+          <a
+            href="../index.html"
+            class="btn btn-sm btn-editorial-secondary d-none d-sm-inline-flex align-items-center gap-1"
+          >
+            <span class="material-symbols-outlined" style="font-size: 1rem;">arrow_back</span>
+            <span>Voltar ao Acervo</span>
+          </a>
+        </div>
+      </header>
+
+      <!-- Painel de Gestão: Grid Responsivo com 2 Colunas no Desktop (ID 02 & ID 03) -->
+      <section class="py-4 py-md-5 px-4 px-md-5 flex-grow-1">
+        <div class="container-fluid px-0">
+          <div class="row g-4 g-xl-5">
+            
+            <!-- Coluna Esquerda: Solicitações para meus livros -->
+            <div class="col-12 col-lg-7">
+              <div class="border-bottom pb-2 mb-4 d-flex justify-content-between align-items-center">
+                <h3 class="h5 playfair fw-bold mb-0 text-dark d-flex align-items-center gap-2">
+                  <span class="material-symbols-outlined text-editorial-primary">inbox</span>
+                  <span>Solicitações para meus livros</span>
+                </h3>
+                <span class="badge bg-secondary-subtle text-secondary rounded-0 px-2 py-1 small">
+                  2 Pendentes
+                </span>
+              </div>
+
+              <div class="d-flex flex-column gap-3" id="requestsContainer">
+                
+                <!-- Solicitação 1: O Ateneu -->
+                <article class="card rounded-0 border bg-surface p-3 p-sm-4 shadow-sm request-card" id="request-1">
+                  <div class="d-flex flex-column flex-sm-row gap-3 align-items-start align-items-sm-center justify-content-between">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="book-thumbnail-container" style="width: 4rem; height: 5.5rem; flex-shrink: 0; background-color: #eeeeed;">
+                        <picture>
+                          <source
+                            srcset="
+                              ../assets/resources/images/ficcoes-800w.webp 2x,
+                              ../assets/resources/images/ficcoes-400w.webp 1x
+                            "
+                            type="image/webp"
+                          />
+                          <img
+                            src="../assets/resources/images/ficcoes-400w.webp"
+                            alt="Capa do livro O Ateneu"
+                            class="w-100 h-100"
+                            style="object-fit: cover;"
+                          />
+                        </picture>
+                      </div>
+                      <div>
+                        <h4 class="h6 playfair fw-bold mb-1">
+                          <a href="detalhes-livro.html" class="text-decoration-none text-reset">
+                            O Ateneu
+                          </a>
+                        </h4>
+                        <p class="text-secondary small mb-1">
+                          Solicitado por: <span class="fw-semibold text-dark">Ana Clara</span>
+                        </p>
+                        <p class="text-secondary small mb-0 d-flex align-items-center gap-1">
+                          <span class="material-symbols-outlined" style="font-size: 0.875rem;">schedule</span>
+                          <span>Hoje, 10:30</span>
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="d-flex gap-2 w-100 w-sm-auto justify-content-end action-buttons-group">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-editorial-primary px-3 py-1 btn-action-accept"
+                        data-target-request="request-1"
+                        data-book-name="O Ateneu"
+                        data-user-name="Ana Clara"
+                      >
+                        ACEITAR
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary rounded-0 px-3 py-1 btn-action-reject"
+                        data-target-request="request-1"
+                        data-book-name="O Ateneu"
+                      >
+                        RECUSAR
+                      </button>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Solicitação 2: Memórias Póstumas -->
+                <article class="card rounded-0 border bg-surface p-3 p-sm-4 shadow-sm request-card" id="request-2">
+                  <div class="d-flex flex-column flex-sm-row gap-3 align-items-start align-items-sm-center justify-content-between">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="book-thumbnail-container" style="width: 4rem; height: 5.5rem; flex-shrink: 0; background-color: #eeeeed;">
+                        <picture>
+                          <source
+                            srcset="
+                              ../assets/resources/images/memorias-postumas-800w.webp 2x,
+                              ../assets/resources/images/memorias-postumas-400w.webp 1x
+                            "
+                            type="image/webp"
+                          />
+                          <img
+                            src="../assets/resources/images/memorias-postumas-400w.webp"
+                            alt="Capa do livro Memórias Póstumas de Brás Cubas"
+                            class="w-100 h-100"
+                            style="object-fit: cover;"
+                          />
+                        </picture>
+                      </div>
+                      <div>
+                        <h4 class="h6 playfair fw-bold mb-1">
+                          <a href="detalhes-livro.html" class="text-decoration-none text-reset">
+                            Memórias Póstumas
+                          </a>
+                        </h4>
+                        <p class="text-secondary small mb-1">
+                          Solicitado por: <span class="fw-semibold text-dark">Carlos Eduardo</span>
+                        </p>
+                        <p class="text-secondary small mb-0 d-flex align-items-center gap-1">
+                          <span class="material-symbols-outlined" style="font-size: 0.875rem;">schedule</span>
+                          <span>Ontem, 18:45</span>
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="d-flex gap-2 w-100 w-sm-auto justify-content-end action-buttons-group">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-editorial-primary px-3 py-1 btn-action-accept"
+                        data-target-request="request-2"
+                        data-book-name="Memórias Póstumas"
+                        data-user-name="Carlos Eduardo"
+                      >
+                        ACEITAR
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary rounded-0 px-3 py-1 btn-action-reject"
+                        data-target-request="request-2"
+                        data-book-name="Memórias Póstumas"
+                      >
+                        RECUSAR
+                      </button>
+                    </div>
+                  </div>
+                </article>
+
+              </div>
+            </div>
+
+            <!-- Coluna Direita: Meus Empréstimos & Livros que estou emprestando -->
+            <div class="col-12 col-lg-5">
+              <div class="d-flex flex-column gap-5">
+                
+                <!-- Bloco: Meus Empréstimos -->
+                <div>
+                  <div class="border-bottom pb-2 mb-3">
+                    <h3 class="h5 playfair fw-bold mb-0 text-dark d-flex align-items-center gap-2">
+                      <span class="material-symbols-outlined text-editorial-primary">book</span>
+                      <span>Meus Empréstimos</span>
+                    </h3>
+                  </div>
+
+                  <article class="card rounded-0 border bg-surface p-3 p-sm-4 shadow-sm" id="loan-item-1">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                      <div>
+                        <h4 class="h6 playfair fw-bold mb-1">
+                          <a href="detalhes-livro.html" class="text-decoration-none text-reset">
+                            Dom Casmurro
+                          </a>
+                        </h4>
+                        <p class="text-secondary small mb-0">
+                          Dono: <span class="fw-semibold text-dark">Roberto Carlos</span>
+                        </p>
+                      </div>
+                      <span class="badge bg-success-subtle text-success border border-success-subtle rounded-0 px-2 py-1 small">
+                        Em posse
+                      </span>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
+                      <p class="small text-secondary mb-0 d-flex align-items-center gap-1">
+                        <span class="material-symbols-outlined text-secondary" style="font-size: 1rem;">event</span>
+                        <span>Prazo: <strong>20/11</strong></span>
+                      </p>
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-editorial-secondary px-3 py-1 btn-return-book"
+                        data-target-loan="loan-item-1"
+                        data-book-name="Dom Casmurro"
+                        data-bs-toggle="modal"
+                        data-bs-target="#returnModal"
+                      >
+                        DEVOLVER
+                      </button>
+                    </div>
+                  </article>
+                </div>
+
+                <!-- Bloco: Livros que estou emprestando -->
+                <div>
+                  <div class="border-bottom pb-2 mb-3">
+                    <h3 class="h5 playfair fw-bold mb-0 text-dark d-flex align-items-center gap-2">
+                      <span class="material-symbols-outlined text-editorial-primary">outbox</span>
+                      <span>Livros que estou emprestando</span>
+                    </h3>
+                  </div>
+
+                  <article class="card rounded-0 border bg-surface p-3 p-sm-4 shadow-sm">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                      <div>
+                        <h4 class="h6 playfair fw-bold mb-1">Grande Sertão: Veredas</h4>
+                        <p class="text-secondary small mb-0">
+                          Com: <span class="fw-semibold text-dark">Marina Silva</span>
+                        </p>
+                      </div>
+                      <span class="badge bg-warning-subtle text-warning-emphasis border border-warning-subtle rounded-0 px-2 py-1 small">
+                        Emprestado
+                      </span>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
+                      <p class="small text-secondary mb-0 d-flex align-items-center gap-1">
+                        <span class="material-symbols-outlined text-secondary" style="font-size: 1rem;">event_upcoming</span>
+                        <span>Devolução: <strong>15/11</strong></span>
+                      </p>
+                      <span class="small text-secondary fst-italic">Aguardando devolução</span>
+                    </div>
+                  </article>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Modal de Confirmação de Devolução (ID 04: Componente JavaScript Modal do Bootstrap 5) -->
+      <div
+        class="modal fade"
+        id="returnModal"
+        tabindex="-1"
+        aria-labelledby="returnModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content rounded-0 border">
+            <div class="modal-header border-bottom">
+              <h1 class="modal-title fs-5 playfair fw-bold" id="returnModalLabel">
+                Confirmar Devolução
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Fechar"
+              ></button>
+            </div>
+            <div class="modal-body py-4">
+              <p class="mb-2">
+                Deseja confirmar a devolução do livro <strong id="modalBookTitle">Dom Casmurro</strong> ao proprietário?
+              </p>
+              <p class="text-secondary small mb-0">
+                O exemplar será atualizado no sistema e ficará disponível novamente para o acervo.
+              </p>
+            </div>
+            <div class="modal-footer border-top">
+              <button
+                type="button"
+                class="btn btn-outline-secondary rounded-0 px-3"
+                data-bs-dismiss="modal"
+              >
+                Cancelar
+              </button>
+              <button
+                type="button"
+                id="btnConfirmReturn"
+                class="btn btn-editorial-primary px-4"
+                data-bs-dismiss="modal"
+              >
+                Confirmar Devolução
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Toast de Feedback de Ações (ID 04: Bootstrap Toast) -->
+      <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1080;">
+        <div id="loanActionToast" class="toast align-items-center text-bg-dark border-0 rounded-0" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="d-flex">
+            <div class="toast-body d-flex align-items-center gap-2">
+              <span class="material-symbols-outlined text-success" id="toastIcon">check_circle</span>
+              <span id="toastMessage">Operação realizada com sucesso!</span>
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Fechar"></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rodapé Institucional -->
+      <footer class="mt-auto py-5 px-4 px-md-5 border-top bg-surface">
+        <div class="container-fluid px-0">
+          <div
+            class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-4"
+          >
+            <div class="h5 playfair text-editorial-primary mb-0 fw-bold">
+              Biblioteca 364
+            </div>
+            <p class="mb-0 text-secondary small text-center text-md-start">
+              &copy; 2024 Biblioteca 364. Um arquivo comunitário digital para
+              compartilhamento de livros físicos entre amigos.
+            </p>
+            <div class="d-flex gap-3 small">
+              <a class="text-secondary text-decoration-none" href="#">Termos</a>
+              <a class="text-secondary text-decoration-none" href="#"
+                >Privacidade</a
+              >
+              <a class="text-secondary text-decoration-none" href="#"
+                >Contato</a
+              >
+              <a class="text-secondary text-decoration-none" href="#"
+                >Sobre o Projeto</a
+              >
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Bootstrap 5.3 JS Bundle Carregado Localmente (Sem CDN) -->
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script de Inicialização da Aplicação -->
+    <script src="../assets/resources/scripts/index.js"></script>
+  </body>
+</html>
