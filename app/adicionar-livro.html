@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adicionar Livro - Biblioteca 364</title>
+
+    <!-- Google Fonts: Playfair Display, Inter & Material Symbols Outlined -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+      rel="stylesheet"
+    />
+
+    <!-- Compilação Local do Bootstrap 5.3 + Design Tokens com Sass (Sem CDN) -->
+    <link rel="stylesheet" href="../assets/resources/styles/main.css" />
+  </head>
+  <body>
+    <!-- =========================================================================
+       SIDEBAR / OFFCANVAS DE NAVEGAÇÃO
+       ID 04: Componente JavaScript Offcanvas Responsivo do Bootstrap 5.3
+       Fixo no Desktop (>=992px) e Gaveta Offcanvas no Mobile/Tablet (<992px)
+       ========================================================================= -->
+    <aside
+      class="sidebar offcanvas-lg offcanvas-start"
+      id="sidebarMenu"
+      tabindex="-1"
+      aria-labelledby="sidebarMenuLabel"
+    >
+      <!-- Cabeçalho visível no Mobile/Offcanvas -->
+      <div
+        class="offcanvas-header border-bottom border-secondary border-opacity-25 p-4 d-lg-none"
+      >
+        <div>
+          <h1 class="h4 playfair fw-bold mb-1 text-light" id="sidebarMenuLabel">
+            Biblioteca 364
+          </h1>
+          <p class="mb-0 small text-white-50">Arquivo Digital Comunitário</p>
+        </div>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="offcanvas"
+          data-bs-target="#sidebarMenu"
+          aria-label="Fechar"
+        ></button>
+      </div>
+
+      <!-- Cabeçalho visível no Desktop -->
+      <div
+        class="p-4 border-bottom border-secondary border-opacity-25 d-none d-lg-block"
+      >
+        <h1 class="h4 playfair fw-bold mb-1 text-light">Biblioteca 364</h1>
+        <p class="mb-0 small text-white-50">Arquivo Digital</p>
+      </div>
+
+      <!-- Botão de Ação Rápida: Adicionar Livro (Ativo nesta tela) -->
+      <div class="px-4 pt-3 pb-1">
+        <a
+          href="adicionar-livro.html"
+          class="btn btn-editorial-primary w-100 py-2 d-flex align-items-center justify-content-center gap-2 fw-semibold text-white tracking-wider"
+        >
+          <span class="material-symbols-outlined" style="font-size: 1.125rem"
+            >add</span
+          >
+          + ADICIONAR LIVRO
+        </a>
+      </div>
+
+      <!-- Links de Navegação Principal -->
+      <nav class="py-3 flex-grow-1" aria-label="Navegação Principal">
+        <ul class="nav flex-column gap-1 px-2">
+          <li class="nav-item">
+            <a class="nav-link-custom" href="../index.html">
+              <span class="material-symbols-outlined">menu_book</span>
+              <span>Biblioteca</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link-custom" href="minha-biblioteca.html">
+              <span class="material-symbols-outlined">local_library</span>
+              <span>Minha Biblioteca</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link-custom" href="gestao-de-emprestimos.html">
+              <span class="material-symbols-outlined">swap_horiz</span>
+              <span>Empréstimos</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Rodapé da Barra Lateral com Perfil do Usuário -->
+      <div class="p-3 border-top border-secondary border-opacity-25 mt-auto">
+        <div class="d-flex align-items-center gap-3">
+          <img
+            src="../assets/resources/images/avatar-user.webp"
+            alt="Avatar do Usuário"
+            class="rounded-circle"
+            width="38"
+            height="38"
+            style="object-fit: cover"
+          />
+          <div class="flex-grow-1 overflow-hidden">
+            <div class="text-white small fw-semibold text-truncate">
+              Maria Silva
+            </div>
+            <div class="text-white-50 small text-truncate">Leitora Ativa</div>
+          </div>
+          <a
+            href="login.html"
+            class="text-white-50 text-decoration-none"
+            title="Sair / Trocar Conta"
+          >
+            <span class="material-symbols-outlined fs-5">logout</span>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- =========================================================================
+       CONTEÚDO PRINCIPAL (Main Content Canvas)
+       ========================================================================= -->
+    <main class="main-content">
+      <!-- Barra Superior / Header Mobile & Busca -->
+      <header
+        class="sticky-top bg-background border-bottom py-3 px-4 px-md-5 d-flex align-items-center justify-content-between z-3"
+      >
+        <div class="d-flex align-items-center gap-3">
+          <button
+            class="btn btn-outline-secondary d-lg-none p-2 rounded-0 border-0"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#sidebarMenu"
+            aria-controls="sidebarMenu"
+            aria-label="Abrir Menu de Navegação"
+          >
+            <span class="material-symbols-outlined">menu</span>
+          </button>
+          <div>
+            <h2 class="h5 playfair fw-bold mb-0 text-editorial-primary">
+              Adicionar Livro à sua Coleção
+            </h2>
+            <p class="text-secondary small mb-0 d-none d-sm-block">
+              Busque no acervo global para adicionar novas obras ao seu arquivo pessoal.
+            </p>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-3">
+          <a
+            href="../index.html"
+            class="btn btn-sm btn-editorial-secondary d-none d-sm-inline-flex align-items-center gap-1"
+          >
+            <span class="material-symbols-outlined" style="font-size: 1rem;">arrow_back</span>
+            <span>Voltar ao Acervo</span>
+          </a>
+        </div>
+      </header>
+
+      <!-- Seção Principal de Pesquisa e Catálogo Global -->
+      <section class="py-4 py-md-5 px-4 px-md-5 flex-grow-1">
+        <div class="container-fluid px-0">
+          <!-- Campo de Busca Global de Livros -->
+          <div class="row mb-4 mb-md-5">
+            <div class="col-12 col-lg-8 col-xl-6">
+              <div class="position-relative">
+                <span
+                  class="material-symbols-outlined position-absolute top-50 start-0 translate-middle-y ms-2 text-secondary"
+                  style="font-size: 1.25rem; pointer-events: none;"
+                >
+                  search
+                </span>
+                <input
+                  type="search"
+                  id="searchGlobalInput"
+                  class="form-control ps-5 py-2 rounded-0 border-0 border-bottom border-dark"
+                  placeholder="Buscar por título, autor ou ISBN..."
+                  aria-label="Buscar no acervo global"
+                  style="background: transparent;"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Grade de Resultados de Livros (ID 02: Grid Bootstrap & ID 03: Flexbox/Grid) -->
+          <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4" id="booksGrid">
+            <!-- Livro 1: Memórias Póstumas de Brás Cubas -->
+            <div class="col book-item">
+              <article class="card h-100 rounded-0 border bg-surface d-flex flex-column">
+                <div class="book-image-container position-relative overflow-hidden">
+                  <picture>
+                    <source
+                      srcset="
+                        ../assets/resources/images/memorias-postumas-800w.webp 2x,
+                        ../assets/resources/images/memorias-postumas-400w.webp 1x
+                      "
+                      type="image/webp"
+                    />
+                    <img
+                      src="../assets/resources/images/memorias-postumas-400w.webp"
+                      alt="Capa do livro Memórias Póstumas de Brás Cubas de Machado de Assis"
+                      class="book-image"
+                      loading="lazy"
+                    />
+                  </picture>
+                  <span class="position-absolute top-0 end-0 m-2 badge bg-light text-dark border rounded-0 fw-semibold">
+                    DOMÍNIO PÚBLICO
+                  </span>
+                </div>
+                <div class="card-body p-4 d-flex flex-column flex-grow-1">
+                  <h3 class="h5 playfair fw-bold mb-1">
+                    <a href="detalhes-livro.html" class="text-decoration-none text-reset">
+                      Memórias Póstumas de Brás Cubas
+                    </a>
+                  </h3>
+                  <p class="text-secondary small mb-3">Machado de Assis</p>
+                  <p class="text-secondary small flex-grow-1 mb-4">
+                    Publicado em 1881, este clássico da literatura brasileira narra a vida e a morte de Brás Cubas sob a perspectiva do "defunto autor".
+                  </p>
+                  <button
+                    type="button"
+                    class="btn btn-editorial-primary w-100 py-2 d-flex align-items-center justify-content-center gap-2 btn-add-book"
+                    data-book-title="Memórias Póstumas de Brás Cubas"
+                  >
+                    <span class="material-symbols-outlined" style="font-size: 1.125rem;">bookmark_add</span>
+                    <span>ADICIONAR À MINHA BIBLIOTECA</span>
+                  </button>
+                </div>
+              </article>
+            </div>
+
+            <!-- Livro 2: O Design do Dia a Dia -->
+            <div class="col book-item">
+              <article class="card h-100 rounded-0 border bg-surface d-flex flex-column">
+                <div class="book-image-container position-relative overflow-hidden">
+                  <picture>
+                    <source
+                      srcset="
+                        ../assets/resources/images/o-design-do-dia-a-dia-800w.webp 2x,
+                        ../assets/resources/images/o-design-do-dia-a-dia-400w.webp 1x
+                      "
+                      type="image/webp"
+                    />
+                    <img
+                      src="../assets/resources/images/o-design-do-dia-a-dia-400w.webp"
+                      alt="Capa do livro O Design do Dia a Dia de Donald A. Norman"
+                      class="book-image"
+                      loading="lazy"
+                    />
+                  </picture>
+                  <span class="position-absolute top-0 end-0 m-2 badge bg-light text-dark border rounded-0 fw-semibold">
+                    DESIGN & UX
+                  </span>
+                </div>
+                <div class="card-body p-4 d-flex flex-column flex-grow-1">
+                  <h3 class="h5 playfair fw-bold mb-1">
+                    <a href="detalhes-livro.html" class="text-decoration-none text-reset">
+                      O Design do Dia a Dia
+                    </a>
+                  </h3>
+                  <p class="text-secondary small mb-3">Donald A. Norman</p>
+                  <p class="text-secondary small flex-grow-1 mb-4">
+                    Uma exploração profunda sobre como o design afeta nossa interação com objetos cotidianos, defendendo que o bom design deve ser intuitivo, usável e centrado no ser humano.
+                  </p>
+                  <button
+                    type="button"
+                    class="btn btn-editorial-primary w-100 py-2 d-flex align-items-center justify-content-center gap-2 btn-add-book"
+                    data-book-title="O Design do Dia a Dia"
+                  >
+                    <span class="material-symbols-outlined" style="font-size: 1.125rem;">bookmark_add</span>
+                    <span>ADICIONAR À MINHA BIBLIOTECA</span>
+                  </button>
+                </div>
+              </article>
+            </div>
+
+            <!-- Livro 3: A Paixão Segundo G.H. -->
+            <div class="col book-item">
+              <article class="card h-100 rounded-0 border bg-surface d-flex flex-column">
+                <div class="book-image-container position-relative overflow-hidden">
+                  <picture>
+                    <source
+                      srcset="
+                        ../assets/resources/images/a-paixao-segundo-gh-800w.webp 2x,
+                        ../assets/resources/images/a-paixao-segundo-gh-400w.webp 1x
+                      "
+                      type="image/webp"
+                    />
+                    <img
+                      src="../assets/resources/images/a-paixao-segundo-gh-400w.webp"
+                      alt="Capa do livro A Paixão Segundo G.H. de Clarice Lispector"
+                      class="book-image"
+                      loading="lazy"
+                    />
+                  </picture>
+                  <span class="position-absolute top-0 end-0 m-2 badge bg-light text-dark border rounded-0 fw-semibold">
+                    LITERATURA BRASILEIRA
+                  </span>
+                </div>
+                <div class="card-body p-4 d-flex flex-column flex-grow-1">
+                  <h3 class="h5 playfair fw-bold mb-1">
+                    <a href="detalhes-livro.html" class="text-decoration-none text-reset">
+                      A Paixão Segundo G.H.
+                    </a>
+                  </h3>
+                  <p class="text-secondary small mb-3">Clarice Lispector</p>
+                  <p class="text-secondary small flex-grow-1 mb-4">
+                    Um romance introspectivo e existencial que relata a epifania de uma mulher de classe alta após um encontro incomum no quarto de empregada de sua cobertura.
+                  </p>
+                  <button
+                    type="button"
+                    class="btn btn-editorial-primary w-100 py-2 d-flex align-items-center justify-content-center gap-2 btn-add-book"
+                    data-book-title="A Paixão Segundo G.H."
+                  >
+                    <span class="material-symbols-outlined" style="font-size: 1.125rem;">bookmark_add</span>
+                    <span>ADICIONAR À MINHA BIBLIOTECA</span>
+                  </button>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Toast de Notificação (ID 04: Componente JavaScript do Bootstrap) -->
+      <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1080;">
+        <div id="addBookToast" class="toast align-items-center text-bg-dark border-0 rounded-0" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="d-flex">
+            <div class="toast-body d-flex align-items-center gap-2">
+              <span class="material-symbols-outlined text-success">check_circle</span>
+              <span id="toastMessage">Obra adicionada à sua biblioteca com sucesso!</span>
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Fechar"></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rodapé Institucional -->
+      <footer class="mt-auto py-5 px-4 px-md-5 border-top bg-surface">
+        <div class="container-fluid px-0">
+          <div
+            class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-4"
+          >
+            <div class="h5 playfair text-editorial-primary mb-0 fw-bold">
+              Biblioteca 364
+            </div>
+            <p class="mb-0 text-secondary small text-center text-md-start">
+              &copy; 2024 Biblioteca 364. Um arquivo comunitário digital para
+              compartilhamento de livros físicos entre amigos.
+            </p>
+            <div class="d-flex gap-3 small">
+              <a class="text-secondary text-decoration-none" href="#">Termos</a>
+              <a class="text-secondary text-decoration-none" href="#"
+                >Privacidade</a
+              >
+              <a class="text-secondary text-decoration-none" href="#"
+                >Contato</a
+              >
+              <a class="text-secondary text-decoration-none" href="#"
+                >Sobre o Projeto</a
+              >
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Bootstrap 5.3 JS Bundle Carregado Localmente (Sem CDN) -->
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script de Inicialização da Aplicação -->
+    <script src="../assets/resources/scripts/index.js"></script>
+  </body>
+</html>

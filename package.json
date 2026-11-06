@@ -7,8 +7,10 @@
     "doc": "docs"
   },
   "scripts": {
-    "sass:build": "sass assets/resources/styles/scss/main.scss assets/resources/styles/main.css --no-source-map --style=expanded --quiet-deps",
-    "sass:watch": "sass --watch assets/resources/styles/scss/main.scss:assets/resources/styles/main.css --quiet-deps"
+    "build": "npm run sass:build",
+    "sass:build": "sass assets/resources/styles/scss/main.scss assets/resources/styles/main.css --no-source-map --style=expanded --silence-deprecation=import,if-function,global-builtin,color-functions",
+    "sass:watch": "sass --watch assets/resources/styles/scss/main.scss:assets/resources/styles/main.css --silence-deprecation=import,if-function,global-builtin,color-functions",
+    "dev": "npm run sass:watch"
   },
   "repository": {
     "type": "git",
