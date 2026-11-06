@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom Casmurro - Detalhes do Acervo - Biblioteca 364</title>
+
+    <!-- Google Fonts: Playfair Display, Inter & Material Symbols Outlined -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+      rel="stylesheet"
+    />
+
+    <!-- Compilação Local do Bootstrap 5.3 + Design Tokens com Sass (Sem CDN) -->
+    <link rel="stylesheet" href="../assets/resources/styles/main.css" />
+  </head>
+  <body>
+    <!-- =========================================================================
+       SIDEBAR / OFFCANVAS DE NAVEGAÇÃO
+       ID 04: Componente JavaScript Offcanvas Responsivo do Bootstrap 5.3
+       Fixo no Desktop (>=992px) e Gaveta Offcanvas no Mobile/Tablet (<992px)
+       ========================================================================= -->
+    <aside
+      class="sidebar offcanvas-lg offcanvas-start"
+      id="sidebarMenu"
+      tabindex="-1"
+      aria-labelledby="sidebarMenuLabel"
+    >
+      <!-- Cabeçalho visível no Mobile/Offcanvas -->
+      <div
+        class="offcanvas-header border-bottom border-secondary border-opacity-25 p-4 d-lg-none"
+      >
+        <div>
+          <h1 class="h4 playfair fw-bold mb-1 text-light" id="sidebarMenuLabel">
+            Biblioteca 364
+          </h1>
+          <p class="mb-0 small text-white-50">Arquivo Digital Comunitário</p>
+        </div>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="offcanvas"
+          data-bs-target="#sidebarMenu"
+          aria-label="Fechar"
+        ></button>
+      </div>
+
+      <!-- Cabeçalho visível no Desktop -->
+      <div
+        class="p-4 border-bottom border-secondary border-opacity-25 d-none d-lg-block"
+      >
+        <h1 class="h4 playfair fw-bold mb-1 text-light">Biblioteca 364</h1>
+        <p class="mb-0 small text-white-50">Arquivo Digital</p>
+      </div>
+
+      <!-- Botão de Ação Rápida: Adicionar Livro -->
+      <div class="px-4 pt-3 pb-1">
+        <a
+          href="adicionar-livro.html"
+          class="btn btn-editorial-primary w-100 py-2 d-flex align-items-center justify-content-center gap-2 fw-semibold text-white tracking-wider"
+        >
+          <span class="material-symbols-outlined" style="font-size: 1.125rem"
+            >add</span
+          >
+          + ADICIONAR LIVRO
+        </a>
+      </div>
+
+      <!-- Links de Navegação Principal -->
+      <nav class="py-3 flex-grow-1" aria-label="Navegação Principal">
+        <ul class="nav flex-column gap-1 px-2">
+          <li class="nav-item">
+            <a class="nav-link-custom active" href="../index.html">
+              <span class="material-symbols-outlined">menu_book</span>
+              <span>Biblioteca</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link-custom" href="minha-biblioteca.html">
+              <span class="material-symbols-outlined">local_library</span>
+              <span>Minha Biblioteca</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link-custom" href="gestao-de-emprestimos.html">
+              <span class="material-symbols-outlined">swap_horiz</span>
+              <span>Empréstimos</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Rodapé da Barra Lateral com Perfil do Usuário -->
+      <div class="p-3 border-top border-secondary border-opacity-25 mt-auto">
+        <div class="d-flex align-items-center gap-3">
+          <img
+            src="../assets/resources/images/avatar-user.webp"
+            alt="Avatar do Usuário"
+            class="rounded-circle"
+            width="38"
+            height="38"
+            style="object-fit: cover"
+          />
+          <div class="flex-grow-1 overflow-hidden">
+            <div class="text-white small fw-semibold text-truncate">
+              Maria Silva
+            </div>
+            <div class="text-white-50 small text-truncate">Leitora Ativa</div>
+          </div>
+          <a
+            href="login.html"
+            class="text-white-50 text-decoration-none"
+            title="Sair / Trocar Conta"
+          >
+            <span class="material-symbols-outlined fs-5">logout</span>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- =========================================================================
+       CONTEÚDO PRINCIPAL (Main Content Canvas)
+       ========================================================================= -->
+    <main class="main-content">
+      <!-- Barra Superior / Breadcrumb Editorial -->
+      <header
+        class="sticky-top bg-background border-bottom py-3 px-4 px-md-5 d-flex align-items-center justify-content-between z-3"
+      >
+        <div class="d-flex align-items-center gap-3">
+          <button
+            class="btn btn-outline-secondary d-lg-none p-2 rounded-0 border-0"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#sidebarMenu"
+            aria-controls="sidebarMenu"
+            aria-label="Abrir Menu de Navegação"
+          >
+            <span class="material-symbols-outlined">menu</span>
+          </button>
+          <a
+            href="../index.html"
+            class="small text-secondary fw-semibold text-uppercase tracking-wider text-decoration-none d-flex align-items-center gap-1"
+          >
+            <span class="material-symbols-outlined" style="font-size: 1.125rem;">arrow_back</span>
+            <span>Voltar ao Acervo</span>
+          </a>
+        </div>
+
+        <div class="d-flex align-items-center gap-2">
+          <span class="badge border text-secondary font-monospace rounded-0 px-2 py-1 small">
+            TOMBO #0364-BR
+          </span>
+        </div>
+      </header>
+
+      <!-- Detalhes do Livro: Layout em 2 Colunas (ID 02: Grid & ID 03: Flexbox/Grid) -->
+      <section class="py-4 py-md-5 px-4 px-md-5 flex-grow-1">
+        <div class="container-fluid px-0">
+          <div class="row g-4 g-lg-5 align-items-start">
+            
+            <!-- Coluna da Capa & Ação Primária -->
+            <div class="col-12 col-md-5 col-lg-4 col-xl-4 mx-auto mx-md-0">
+              <div class="book-detail-cover-card bg-surface border p-3 shadow-sm">
+                <div class="book-image-container position-relative overflow-hidden mb-3">
+                  <picture>
+                    <source
+                      srcset="
+                        ../assets/resources/images/dom-casmurro-800w.webp 2x,
+                        ../assets/resources/images/dom-casmurro-400w.webp 1x
+                      "
+                      type="image/webp"
+                    />
+                    <img
+                      src="../assets/resources/images/dom-casmurro-400w.webp"
+                      alt="Capa do livro Dom Casmurro de Machado de Assis - Edição Livraria Garnier 1944"
+                      class="book-image"
+                      loading="lazy"
+                    />
+                  </picture>
+                  <div class="position-absolute bottom-0 start-0 end-0 bg-dark bg-opacity-75 text-white p-2 text-center small tracking-wider fw-semibold">
+                    LIVRARIA GARNIER ED. 1944
+                  </div>
+                </div>
+
+                <!-- Botões de Ação do Livro (Representando os estados do protótipo) -->
+                <div class="d-flex flex-column gap-2" id="bookActionArea">
+                  <button
+                    type="button"
+                    id="btnRequestLoan"
+                    class="btn btn-editorial-primary w-100 py-3 fw-bold tracking-wider d-flex align-items-center justify-content-center gap-2"
+                    data-bs-toggle="modal"
+                    data-bs-target="#requestLoanModal"
+                  >
+                    <span class="material-symbols-outlined" style="font-size: 1.25rem;">book_online</span>
+                    <span>SOLICITAR EMPRÉSTIMO</span>
+                  </button>
+
+                  <p class="text-secondary small text-center mb-2" id="ownerCaption">
+                    Disponibilizado por <strong class="text-dark">Roberto Carlos</strong>
+                  </p>
+
+                  <button
+                    type="button"
+                    id="btnAddToMyLibrary"
+                    class="btn btn-outline-secondary rounded-0 w-100 py-2 small fw-semibold tracking-wider d-flex align-items-center justify-content-center gap-2"
+                  >
+                    <span class="material-symbols-outlined" style="font-size: 1.125rem;">library_add</span>
+                    <span>ADICIONAR À MINHA BIBLIOTECA</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Coluna de Informações, Sinopse e Ficha Técnica -->
+            <div class="col-12 col-md-7 col-lg-8 col-xl-8">
+              <div class="pe-xl-5">
+                
+                <!-- Tagline de Metadados e Status -->
+                <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+                  <span class="badge-custom px-2 py-1 d-inline-flex align-items-center gap-1">
+                    <span class="rounded-circle" style="width: 8px; height: 8px; background-color: #2d6a4f;"></span>
+                    <span class="status-indicator-available text-uppercase">Disponível</span>
+                  </span>
+                  <span class="text-secondary small">
+                    LITERATURA BRASILEIRA &bull; EDIÇÃO DE 1944
+                  </span>
+                </div>
+
+                <!-- Título e Autor com Tipografia Responsiva Fluida (ID 08: clamp) -->
+                <h1 class="display-title-fluid playfair fw-bold mb-1 text-dark">
+                  Dom Casmurro
+                </h1>
+                <p class="h5 playfair fst-italic text-secondary mb-4">
+                  de Machado de Assis
+                </p>
+
+                <!-- Divisória Hairline -->
+                <hr class="my-4 opacity-10" />
+
+                <!-- Seção Sinopse do Acervo -->
+                <div class="mb-5">
+                  <h2 class="label-editorial-caps text-secondary mb-3">
+                    SINOPSE DO ACERVO
+                  </h2>
+                  <div class="body-text text-dark" style="line-height: 1.75; font-size: 1.0625rem;">
+                    <p class="mb-3">
+                      Publicado originalmente em 1899, <em>Dom Casmurro</em> é uma das obras seminais da ficção universal. Narrado em primeira pessoa por Bento Santiago — o Casmurro já idoso —, o romance revive a mocidade do protagonista em Matacavalos, o romance com Capitu e o espectro do ciúme e da suspeita de traição com Escobar.
+                    </p>
+                    <p class="mb-0">
+                      Este exemplar comemorativo de 1944 pela parisiense Livraria Garnier preserva a encadernação original em percalina verde com gravações douradas na lombada, em excepcional estado de conservação física para leitura.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Seção Ficha Técnica (CSS Grid / ID 03) -->
+                <div class="border-top pt-4">
+                  <h2 class="label-editorial-caps text-secondary mb-3">
+                    FICHA TÉCNICA
+                  </h2>
+                  <div class="row row-cols-3 g-3 text-start">
+                    <div class="col border-end pe-3">
+                      <div class="text-secondary small text-uppercase fw-semibold mb-1" style="font-size: 0.75rem; letter-spacing: 0.05em;">
+                        EDITORA
+                      </div>
+                      <div class="fw-semibold text-dark">
+                        Livraria Garnier
+                      </div>
+                    </div>
+                    <div class="col border-end pe-3">
+                      <div class="text-secondary small text-uppercase fw-semibold mb-1" style="font-size: 0.75rem; letter-spacing: 0.05em;">
+                        ANO
+                      </div>
+                      <div class="fw-semibold text-dark">
+                        1944
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="text-secondary small text-uppercase fw-semibold mb-1" style="font-size: 0.75rem; letter-spacing: 0.05em;">
+                        PÁGINAS
+                      </div>
+                      <div class="fw-semibold text-dark">
+                        256 págs.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Modal de Confirmação de Solicitação de Empréstimo (ID 04: Componente JavaScript do Bootstrap) -->
+      <div
+        class="modal fade"
+        id="requestLoanModal"
+        tabindex="-1"
+        aria-labelledby="requestLoanModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content rounded-0 border">
+            <div class="modal-header border-bottom">
+              <h1 class="modal-title fs-5 playfair fw-bold" id="requestLoanModalLabel">
+                Solicitar Empréstimo
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Fechar"
+              ></button>
+            </div>
+            <div class="modal-body py-4">
+              <p class="mb-2">
+                Você está solicitando o exemplar físico de <strong>Dom Casmurro (1944)</strong> disponibilizado por <strong>Roberto Carlos</strong>.
+              </p>
+              <div class="mb-3">
+                <label for="loanDuration" class="form-label small fw-semibold text-secondary">
+                  Período pretendido de leitura:
+                </label>
+                <select id="loanDuration" class="form-select rounded-0">
+                  <option value="15">15 dias (sugerido)</option>
+                  <option value="30">30 dias</option>
+                  <option value="7">7 dias (leitura rápida)</option>
+                </select>
+              </div>
+              <p class="text-secondary small mb-0">
+                O proprietário receberá uma notificação na sua aba de empréstimos para aprovar o pedido.
+              </p>
+            </div>
+            <div class="modal-footer border-top">
+              <button
+                type="button"
+                class="btn btn-outline-secondary rounded-0 px-3"
+                data-bs-dismiss="modal"
+              >
+                Cancelar
+              </button>
+              <button
+                type="button"
+                id="btnConfirmLoanRequest"
+                class="btn btn-editorial-primary px-4"
+                data-bs-dismiss="modal"
+              >
+                Confirmar Solicitação
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Toast de Notificação (ID 04: Bootstrap Toast) -->
+      <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1080;">
+        <div id="detailToast" class="toast align-items-center text-bg-dark border-0 rounded-0" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="d-flex">
+            <div class="toast-body d-flex align-items-center gap-2">
+              <span class="material-symbols-outlined text-success" id="detailToastIcon">check_circle</span>
+              <span id="detailToastMessage">Solicitação de empréstimo enviada com sucesso!</span>
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Fechar"></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rodapé Institucional -->
+      <footer class="mt-auto py-5 px-4 px-md-5 border-top bg-surface">
+        <div class="container-fluid px-0">
+          <div
+            class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-4"
+          >
+            <div class="h5 playfair text-editorial-primary mb-0 fw-bold">
+              Biblioteca 364
+            </div>
+            <p class="mb-0 text-secondary small text-center text-md-start">
+              &copy; 2024 Biblioteca 364. Um arquivo comunitário digital para
+              compartilhamento de livros físicos entre amigos.
+            </p>
+            <div class="d-flex gap-3 small">
+              <a class="text-secondary text-decoration-none" href="#">Termos</a>
+              <a class="text-secondary text-decoration-none" href="#"
+                >Privacidade</a
+              >
+              <a class="text-secondary text-decoration-none" href="#"
+                >Contato</a
+              >
+              <a class="text-secondary text-decoration-none" href="#"
+                >Sobre o Projeto</a
+              >
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Bootstrap 5.3 JS Bundle Carregado Localmente (Sem CDN) -->
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script de Inicialização da Aplicação -->
+    <script src="../assets/resources/scripts/index.js"></script>
+  </body>
+</html>

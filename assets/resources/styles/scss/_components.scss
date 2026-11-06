@@ -840,8 +840,8 @@ body {
   position: relative;
   aspect-ratio: 2/3;
   overflow: hidden;
-  border-bottom: 1px solid -outline;
-  background-color: -surface-container;
+  border-bottom: 1px solid $color-outline;
+  background-color: $color-surface-container;
 }
 
 .card-img-top {
@@ -861,7 +861,7 @@ body {
   right: 1rem;
   background-color: rgba(250, 249, 248, 0.92);
   backdrop-filter: blur(4px);
-  border: 1px solid -outline;
+  border: 1px solid $color-outline;
   border-radius: 50rem;
   padding: 0.25rem 0.75rem;
   display: flex;
@@ -882,5 +882,5 @@ body {
   position: absolute;
   left: 0;
   bottom: 0.5rem;
-  color: -secondary;
+  color: $color-secondary;
 }
