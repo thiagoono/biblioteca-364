@@ -68,7 +68,7 @@
           <span class="material-symbols-outlined" style="font-size: 1.125rem"
             >add</span
           >
-          + ADICIONAR LIVRO
+          ADICIONAR LIVRO
         </a>
       </div>
 
@@ -148,7 +148,8 @@
               Adicionar Livro à sua Coleção
             </h2>
             <p class="text-secondary small mb-0 d-none d-sm-block">
-              Busque no acervo global para adicionar novas obras ao seu arquivo pessoal.
+              Busque no acervo global para adicionar novas obras ao seu arquivo
+              pessoal.
             </p>
           </div>
         </div>
@@ -158,7 +159,9 @@
             href="../index.html"
             class="btn btn-sm btn-editorial-secondary d-none d-sm-inline-flex align-items-center gap-1"
           >
-            <span class="material-symbols-outlined" style="font-size: 1rem;">arrow_back</span>
+            <span class="material-symbols-outlined" style="font-size: 1rem"
+              >arrow_back</span
+            >
             <span>Voltar ao Acervo</span>
           </a>
         </div>
@@ -173,7 +176,7 @@
               <div class="position-relative">
                 <span
                   class="material-symbols-outlined position-absolute top-50 start-0 translate-middle-y ms-2 text-secondary"
-                  style="font-size: 1.25rem; pointer-events: none;"
+                  style="font-size: 1.25rem; pointer-events: none"
                 >
                   search
                 </span>
@@ -183,18 +186,25 @@
                   class="form-control ps-5 py-2 rounded-0 border-0 border-bottom border-dark"
                   placeholder="Buscar por título, autor ou ISBN..."
                   aria-label="Buscar no acervo global"
-                  style="background: transparent;"
+                  style="background: transparent"
                 />
               </div>
             </div>
           </div>
 
           <!-- Grade de Resultados de Livros (ID 02: Grid Bootstrap & ID 03: Flexbox/Grid) -->
-          <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4" id="booksGrid">
+          <div
+            class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4"
+            id="booksGrid"
+          >
             <!-- Livro 1: Memórias Póstumas de Brás Cubas -->
             <div class="col book-item">
-              <article class="card h-100 rounded-0 border bg-surface d-flex flex-column">
-                <div class="book-image-container position-relative overflow-hidden">
+              <article
+                class="card h-100 rounded-0 border bg-surface d-flex flex-column"
+              >
+                <div
+                  class="book-image-container position-relative overflow-hidden"
+                >
                   <picture>
                     <source
                       srcset="
@@ -211,26 +221,37 @@
                       loading="lazy"
                     />
                   </picture>
-                  <span class="position-absolute top-0 end-0 m-2 badge bg-light text-dark border rounded-0 fw-semibold">
+                  <span
+                    class="position-absolute top-0 end-0 m-2 badge bg-light text-dark border rounded-0 fw-semibold"
+                  >
                     DOMÍNIO PÚBLICO
                   </span>
                 </div>
                 <div class="card-body p-4 d-flex flex-column flex-grow-1">
                   <h3 class="h5 playfair fw-bold mb-1">
-                    <a href="detalhes-livro.html" class="text-decoration-none text-reset">
+                    <a
+                      href="detalhes-livro.html"
+                      class="text-decoration-none text-reset"
+                    >
                       Memórias Póstumas de Brás Cubas
                     </a>
                   </h3>
                   <p class="text-secondary small mb-3">Machado de Assis</p>
                   <p class="text-secondary small flex-grow-1 mb-4">
-                    Publicado em 1881, este clássico da literatura brasileira narra a vida e a morte de Brás Cubas sob a perspectiva do "defunto autor".
+                    Publicado em 1881, este clássico da literatura brasileira
+                    narra a vida e a morte de Brás Cubas sob a perspectiva do
+                    "defunto autor".
                   </p>
                   <button
                     type="button"
                     class="btn btn-editorial-primary w-100 py-2 d-flex align-items-center justify-content-center gap-2 btn-add-book"
                     data-book-title="Memórias Póstumas de Brás Cubas"
                   >
-                    <span class="material-symbols-outlined" style="font-size: 1.125rem;">bookmark_add</span>
+                    <span
+                      class="material-symbols-outlined"
+                      style="font-size: 1.125rem"
+                      >bookmark_add</span
+                    >
                     <span>ADICIONAR À MINHA BIBLIOTECA</span>
                   </button>
                 </div>
@@ -239,8 +260,12 @@
 
             <!-- Livro 2: O Design do Dia a Dia -->
             <div class="col book-item">
-              <article class="card h-100 rounded-0 border bg-surface d-flex flex-column">
-                <div class="book-image-container position-relative overflow-hidden">
+              <article
+                class="card h-100 rounded-0 border bg-surface d-flex flex-column"
+              >
+                <div
+                  class="book-image-container position-relative overflow-hidden"
+                >
                   <picture>
                     <source
                       srcset="
@@ -257,26 +282,37 @@
                       loading="lazy"
                     />
                   </picture>
-                  <span class="position-absolute top-0 end-0 m-2 badge bg-light text-dark border rounded-0 fw-semibold">
+                  <span
+                    class="position-absolute top-0 end-0 m-2 badge bg-light text-dark border rounded-0 fw-semibold"
+                  >
                     DESIGN & UX
                   </span>
                 </div>
                 <div class="card-body p-4 d-flex flex-column flex-grow-1">
                   <h3 class="h5 playfair fw-bold mb-1">
-                    <a href="detalhes-livro.html" class="text-decoration-none text-reset">
+                    <a
+                      href="detalhes-livro.html"
+                      class="text-decoration-none text-reset"
+                    >
                       O Design do Dia a Dia
                     </a>
                   </h3>
                   <p class="text-secondary small mb-3">Donald A. Norman</p>
                   <p class="text-secondary small flex-grow-1 mb-4">
-                    Uma exploração profunda sobre como o design afeta nossa interação com objetos cotidianos, defendendo que o bom design deve ser intuitivo, usável e centrado no ser humano.
+                    Uma exploração profunda sobre como o design afeta nossa
+                    interação com objetos cotidianos, defendendo que o bom
+                    design deve ser intuitivo, usável e centrado no ser humano.
                   </p>
                   <button
                     type="button"
                     class="btn btn-editorial-primary w-100 py-2 d-flex align-items-center justify-content-center gap-2 btn-add-book"
                     data-book-title="O Design do Dia a Dia"
                   >
-                    <span class="material-symbols-outlined" style="font-size: 1.125rem;">bookmark_add</span>
+                    <span
+                      class="material-symbols-outlined"
+                      style="font-size: 1.125rem"
+                      >bookmark_add</span
+                    >
                     <span>ADICIONAR À MINHA BIBLIOTECA</span>
                   </button>
                 </div>
@@ -285,8 +321,12 @@
 
             <!-- Livro 3: A Paixão Segundo G.H. -->
             <div class="col book-item">
-              <article class="card h-100 rounded-0 border bg-surface d-flex flex-column">
-                <div class="book-image-container position-relative overflow-hidden">
+              <article
+                class="card h-100 rounded-0 border bg-surface d-flex flex-column"
+              >
+                <div
+                  class="book-image-container position-relative overflow-hidden"
+                >
                   <picture>
                     <source
                       srcset="
@@ -303,26 +343,37 @@
                       loading="lazy"
                     />
                   </picture>
-                  <span class="position-absolute top-0 end-0 m-2 badge bg-light text-dark border rounded-0 fw-semibold">
+                  <span
+                    class="position-absolute top-0 end-0 m-2 badge bg-light text-dark border rounded-0 fw-semibold"
+                  >
                     LITERATURA BRASILEIRA
                   </span>
                 </div>
                 <div class="card-body p-4 d-flex flex-column flex-grow-1">
                   <h3 class="h5 playfair fw-bold mb-1">
-                    <a href="detalhes-livro.html" class="text-decoration-none text-reset">
+                    <a
+                      href="detalhes-livro.html"
+                      class="text-decoration-none text-reset"
+                    >
                       A Paixão Segundo G.H.
                     </a>
                   </h3>
                   <p class="text-secondary small mb-3">Clarice Lispector</p>
                   <p class="text-secondary small flex-grow-1 mb-4">
-                    Um romance introspectivo e existencial que relata a epifania de uma mulher de classe alta após um encontro incomum no quarto de empregada de sua cobertura.
+                    Um romance introspectivo e existencial que relata a epifania
+                    de uma mulher de classe alta após um encontro incomum no
+                    quarto de empregada de sua cobertura.
                   </p>
                   <button
                     type="button"
                     class="btn btn-editorial-primary w-100 py-2 d-flex align-items-center justify-content-center gap-2 btn-add-book"
                     data-book-title="A Paixão Segundo G.H."
                   >
-                    <span class="material-symbols-outlined" style="font-size: 1.125rem;">bookmark_add</span>
+                    <span
+                      class="material-symbols-outlined"
+                      style="font-size: 1.125rem"
+                      >bookmark_add</span
+                    >
                     <span>ADICIONAR À MINHA BIBLIOTECA</span>
                   </button>
                 </div>
@@ -333,14 +384,32 @@
       </section>
 
       <!-- Toast de Notificação (ID 04: Componente JavaScript do Bootstrap) -->
-      <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1080;">
-        <div id="addBookToast" class="toast align-items-center text-bg-dark border-0 rounded-0" role="alert" aria-live="assertive" aria-atomic="true">
+      <div
+        class="toast-container position-fixed bottom-0 end-0 p-3"
+        style="z-index: 1080"
+      >
+        <div
+          id="addBookToast"
+          class="toast align-items-center text-bg-dark border-0 rounded-0"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
           <div class="d-flex">
             <div class="toast-body d-flex align-items-center gap-2">
-              <span class="material-symbols-outlined text-success">check_circle</span>
-              <span id="toastMessage">Obra adicionada à sua biblioteca com sucesso!</span>
+              <span class="material-symbols-outlined text-success"
+                >check_circle</span
+              >
+              <span id="toastMessage"
+                >Obra adicionada à sua biblioteca com sucesso!</span
+              >
             </div>
-            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Fechar"></button>
+            <button
+              type="button"
+              class="btn-close btn-close-white me-2 m-auto"
+              data-bs-dismiss="toast"
+              aria-label="Fechar"
+            ></button>
           </div>
         </div>
       </div>

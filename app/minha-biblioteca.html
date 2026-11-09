@@ -68,7 +68,7 @@
           <span class="material-symbols-outlined" style="font-size: 1.125rem"
             >add</span
           >
-          + ADICIONAR LIVRO
+          ADICIONAR LIVRO
         </a>
       </div>
 
@@ -82,7 +82,11 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link-custom active" href="minha-biblioteca.html" aria-current="page">
+            <a
+              class="nav-link-custom active"
+              href="minha-biblioteca.html"
+              aria-current="page"
+            >
               <span class="material-symbols-outlined">local_library</span>
               <span>Minha Biblioteca</span>
             </a>
@@ -158,7 +162,9 @@
             href="adicionar-livro.html"
             class="btn btn-sm btn-editorial-primary d-none d-sm-inline-flex align-items-center gap-1"
           >
-            <span class="material-symbols-outlined" style="font-size: 1rem;">add</span>
+            <span class="material-symbols-outlined" style="font-size: 1rem"
+              >add</span
+            >
             <span>Adicionar Livro</span>
           </a>
         </div>
@@ -166,14 +172,15 @@
 
       <section class="py-4 py-md-5 px-4 px-md-5 flex-grow-1">
         <div class="container-fluid px-0">
-          
           <!-- Linha de Busca e Filtros de Status (Conforme Protótipo do Figma) -->
-          <div class="row align-items-center justify-content-between g-3 mb-4 mb-md-5">
+          <div
+            class="row align-items-center justify-content-between g-3 mb-4 mb-md-5"
+          >
             <div class="col-12 col-md-5 col-lg-4">
               <div class="position-relative">
                 <span
                   class="material-symbols-outlined position-absolute top-50 start-0 translate-middle-y ms-2 text-secondary"
-                  style="font-size: 1.25rem; pointer-events: none;"
+                  style="font-size: 1.25rem; pointer-events: none"
                 >
                   search
                 </span>
@@ -182,14 +189,18 @@
                   placeholder="Buscar no meu acervo..."
                   type="search"
                   aria-label="Buscar no meu acervo"
-                  style="background: transparent;"
+                  style="background: transparent"
                 />
               </div>
             </div>
 
             <!-- Filtros: Emprestado, Solicitado, Disponível -->
-            <div class="col-12 col-md-7 col-lg-6 d-flex align-items-center justify-content-md-end gap-2 overflow-auto pb-1 pb-md-0">
-              <span class="text-secondary small fw-semibold text-uppercase tracking-wider text-nowrap me-1">
+            <div
+              class="col-12 col-md-7 col-lg-6 d-flex align-items-center justify-content-md-end gap-2 overflow-auto pb-1 pb-md-0"
+            >
+              <span
+                class="text-secondary small fw-semibold text-uppercase tracking-wider text-nowrap me-1"
+              >
                 Status:
               </span>
               <button class="filter-btn text-nowrap active" type="button">
@@ -212,15 +223,19 @@
                1 coluna no mobile (col-12), 2 no tablet (col-sm-6), 3 no desktop (col-lg-4)
                ===================================================================== -->
           <div class="row g-4" id="myBooksGrid">
-            
             <!-- Livro 1: Dom Casmurro (Emprestado) -->
             <div class="col-12 col-sm-6 col-lg-4 book-item">
-              <article class="card h-100 overflow-hidden rounded-0 border bg-surface">
+              <article
+                class="card h-100 overflow-hidden rounded-0 border bg-surface"
+              >
                 <!-- ID 09 e ID 10: Imagem com aspect-ratio, object-fit, WebP, width descriptors e sizes -->
                 <div class="card-img-wrapper position-relative">
                   <picture>
                     <source
-                      srcset="../assets/resources/images/dom-casmurro-400w.webp 400w, ../assets/resources/images/dom-casmurro-800w.webp 800w"
+                      srcset="
+                        ../assets/resources/images/dom-casmurro-400w.webp 400w,
+                        ../assets/resources/images/dom-casmurro-800w.webp 800w
+                      "
                       sizes="(max-width: 576px) 100vw, (max-width: 992px) 50vw, 33vw"
                       type="image/webp"
                     />
@@ -232,21 +247,34 @@
                     />
                   </picture>
                   <div class="status-badge">
-                    <span class="status-dot" style="background-color: #5f5e5e;"></span>
-                    <span class="text-secondary text-decoration-line-through">Emprestado</span>
+                    <span
+                      class="status-dot"
+                      style="background-color: #5f5e5e"
+                    ></span>
+                    <span class="text-secondary text-decoration-line-through"
+                      >Emprestado</span
+                    >
                   </div>
                 </div>
-                <div class="card-body d-flex flex-column justify-content-between p-4">
+                <div
+                  class="card-body d-flex flex-column justify-content-between p-4"
+                >
                   <div>
                     <h3 class="h5 playfair fw-bold mb-1">
-                      <a href="detalhes-livro.html" class="text-decoration-none text-reset">
+                      <a
+                        href="detalhes-livro.html"
+                        class="text-decoration-none text-reset"
+                      >
                         Dom Casmurro
                       </a>
                     </h3>
                     <p class="text-secondary mb-0">Machado de Assis</p>
                   </div>
                   <div class="mt-4 pt-3 border-top">
-                    <p class="mb-0 d-flex align-items-center gap-2 small" style="color: #5a403c !important;">
+                    <p
+                      class="mb-0 d-flex align-items-center gap-2 small"
+                      style="color: #5a403c !important"
+                    >
                       <span class="material-symbols-outlined fs-6">person</span>
                       <span>Com: <strong>Roberto Carlos</strong></span>
                     </p>
@@ -257,11 +285,16 @@
 
             <!-- Livro 2: A Metamorfose (Solicitado com Ação de Revisar Pedido) -->
             <div class="col-12 col-sm-6 col-lg-4 book-item">
-              <article class="card h-100 overflow-hidden rounded-0 border bg-surface">
+              <article
+                class="card h-100 overflow-hidden rounded-0 border bg-surface"
+              >
                 <div class="card-img-wrapper position-relative">
                   <picture>
                     <source
-                      srcset="../assets/resources/images/a-metamorfose-400w.webp 400w, ../assets/resources/images/a-metamorfose-800w.webp 800w"
+                      srcset="
+                        ../assets/resources/images/a-metamorfose-400w.webp 400w,
+                        ../assets/resources/images/a-metamorfose-800w.webp 800w
+                      "
                       sizes="(max-width: 576px) 100vw, (max-width: 992px) 50vw, 33vw"
                       type="image/webp"
                     />
@@ -273,14 +306,24 @@
                     />
                   </picture>
                   <div class="status-badge">
-                    <span class="status-dot" style="background-color: #cca730;"></span>
-                    <span class="fst-italic" style="color: #4f3e00;">Solicitado</span>
+                    <span
+                      class="status-dot"
+                      style="background-color: #cca730"
+                    ></span>
+                    <span class="fst-italic" style="color: #4f3e00"
+                      >Solicitado</span
+                    >
                   </div>
                 </div>
-                <div class="card-body d-flex flex-column justify-content-between p-4">
+                <div
+                  class="card-body d-flex flex-column justify-content-between p-4"
+                >
                   <div>
                     <h3 class="h5 playfair fw-bold mb-1">
-                      <a href="detalhes-livro.html" class="text-decoration-none text-reset">
+                      <a
+                        href="detalhes-livro.html"
+                        class="text-decoration-none text-reset"
+                      >
                         A Metamorfose
                       </a>
                     </h3>
@@ -300,11 +343,16 @@
 
             <!-- Livro 3: O Alquimista (Disponível com Ação de Editar Detalhes) -->
             <div class="col-12 col-sm-6 col-lg-4 book-item">
-              <article class="card h-100 overflow-hidden rounded-0 border bg-surface">
+              <article
+                class="card h-100 overflow-hidden rounded-0 border bg-surface"
+              >
                 <div class="card-img-wrapper position-relative">
                   <picture>
                     <source
-                      srcset="../assets/resources/images/o-alquimista-400w.webp 400w, ../assets/resources/images/o-alquimista-800w.webp 800w"
+                      srcset="
+                        ../assets/resources/images/o-alquimista-400w.webp 400w,
+                        ../assets/resources/images/o-alquimista-800w.webp 800w
+                      "
                       sizes="(max-width: 576px) 100vw, (max-width: 992px) 50vw, 33vw"
                       type="image/webp"
                     />
@@ -316,14 +364,22 @@
                     />
                   </picture>
                   <div class="status-badge">
-                    <span class="status-dot" style="background-color: #2d6a4f;"></span>
-                    <span style="color: #2d6a4f;">Disponível</span>
+                    <span
+                      class="status-dot"
+                      style="background-color: #2d6a4f"
+                    ></span>
+                    <span style="color: #2d6a4f">Disponível</span>
                   </div>
                 </div>
-                <div class="card-body d-flex flex-column justify-content-between p-4">
+                <div
+                  class="card-body d-flex flex-column justify-content-between p-4"
+                >
                   <div>
                     <h3 class="h5 playfair fw-bold mb-1">
-                      <a href="detalhes-livro.html" class="text-decoration-none text-reset">
+                      <a
+                        href="detalhes-livro.html"
+                        class="text-decoration-none text-reset"
+                      >
                         O Alquimista
                       </a>
                     </h3>
@@ -340,7 +396,6 @@
                 </div>
               </article>
             </div>
-
           </div>
         </div>
       </section>
