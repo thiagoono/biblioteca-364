@@ -59,11 +59,11 @@ body {
 // Top Navigation Bar
 // -----------------------------------------------------------------------------
 .navbar-editorial {
-  background-color: rgba(250, 249, 248, 0.96);
-  backdrop-filter: blur(8px);
+  background-color: #ffffff;
   @include hairline(bottom);
   padding-top: spacing(1.5);
   padding-bottom: spacing(1.5);
+  z-index: 1020;
 
   .navbar-brand {
     font-family: $font-family-serif;
@@ -690,9 +690,9 @@ body {
 }
 
 .header-nav {
-  background-color: rgba(250, 249, 248, 0.95);
-  backdrop-filter: blur(4px);
+  background-color: #ffffff;
   border-bottom: 1px solid $color-outline;
+  z-index: 1030;
 }
 
 .link-primary-custom {
@@ -720,9 +720,16 @@ body {
 }
 
 .header-top {
-  background-color: $color-background;
+  background-color: #ffffff;
   border-bottom: 1px solid $color-outline;
   padding: 1.5rem 0;
+  position: relative;
+  z-index: 1020;
+}
+
+.main-content > header {
+  background-color: #ffffff !important;
+  z-index: 1020;
 }
 
 .bg-pattern {

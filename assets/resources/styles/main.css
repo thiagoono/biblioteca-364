@@ -11914,11 +11914,11 @@ body {
 }
 
 .navbar-editorial {
-  background-color: rgba(250, 249, 248, 0.96);
-  backdrop-filter: blur(8px);
+  background-color: #ffffff;
   border-bottom: 1px solid rgba(26, 28, 28, 0.12);
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+  z-index: 1020;
 }
 .navbar-editorial .navbar-brand {
   font-family: "Playfair Display", Georgia, serif;
@@ -12538,9 +12538,9 @@ body {
 }
 
 .header-nav {
-  background-color: rgba(250, 249, 248, 0.95);
-  backdrop-filter: blur(4px);
+  background-color: #ffffff;
   border-bottom: 1px solid rgba(26, 28, 28, 0.12);
+  z-index: 1030;
 }
 
 .link-primary-custom {
@@ -12564,9 +12564,16 @@ body {
 }
 
 .header-top {
-  background-color: #faf9f8;
+  background-color: #ffffff;
   border-bottom: 1px solid rgba(26, 28, 28, 0.12);
   padding: 1.5rem 0;
+  position: relative;
+  z-index: 1020;
+}
+
+.main-content > header {
+  background-color: #ffffff !important;
+  z-index: 1020;
 }
 
 .bg-pattern {
