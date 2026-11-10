@@ -142,7 +142,8 @@ body {
   padding: spacing(1.25) spacing(2.25);
   transition: all 0.2s ease;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background-color: $color-primary-container;
     border-color: $color-primary-container;
     color: #ffffff;
@@ -163,7 +164,8 @@ body {
   padding: spacing(1.25) spacing(2.25);
   transition: all 0.2s ease;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background-color: $color-on-background;
     color: #ffffff;
   }
@@ -182,7 +184,8 @@ body {
   padding: spacing(1.25) spacing(2.25);
   transition: all 0.2s ease;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background-color: $color-tertiary;
     border-color: $color-tertiary;
     color: #ffffff;
@@ -518,7 +521,9 @@ body {
     align-items: center;
     gap: spacing(1.5);
     text-decoration: none;
-    transition: background-color 0.2s ease, color 0.2s ease;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
 
     .material-symbols-outlined {
       color: #f3f3f0;
@@ -590,7 +595,8 @@ body {
   background: transparent;
   transition: all 0.2s ease;
 
-  &:hover, &.active {
+  &:hover,
+  &.active {
     background-color: $color-surface-container;
     border-color: $color-primary;
     color: $color-primary;
@@ -676,7 +682,9 @@ body {
   border-bottom: 2px solid rgba(26, 28, 28, 0.2);
   border-radius: 0;
   color: rgba(26, 28, 28, 0.4);
-  transition: color 0.2s ease, border-color 0.2s ease;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .form-group:focus-within .input-group-text-custom,
@@ -738,7 +746,13 @@ body {
   z-index: 0;
   opacity: 0.05;
   pointer-events: none;
-  background-image: repeating-linear-gradient(45deg, $color-on-background 0, $color-on-background 1px, transparent 0, transparent 50%);
+  background-image: repeating-linear-gradient(
+    45deg,
+    $color-on-background 0,
+    $color-on-background 1px,
+    transparent 0,
+    transparent 50%
+  );
   background-size: 0.625rem 0.625rem;
 }
 

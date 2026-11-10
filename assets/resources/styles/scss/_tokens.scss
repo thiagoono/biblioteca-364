@@ -26,14 +26,20 @@ $status-requested: #610000;
 $status-borrowed: #8e706b;
 
 // Tipografia
-$font-family-serif: 'Playfair Display', Georgia, serif;
-$font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$font-family-serif: "Playfair Display", Georgia, serif;
+$font-family-sans:
+  "Inter",
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  Roboto,
+  sans-serif;
 
 // Espaçamentos Modulares (Base 8px / 0.5rem)
-$spacing-unit: 0.5rem;    // 8px
-$spacing-sm: 1rem;        // 16px
-$spacing-md: 2rem;        // 32px
-$spacing-lg: 4rem;        // 64px
+$spacing-unit: 0.5rem; // 8px
+$spacing-sm: 1rem; // 16px
+$spacing-md: 2rem; // 32px
+$spacing-lg: 4rem; // 64px
 $container-max-width: 1280px;
 
 // Bordas e Sombras
